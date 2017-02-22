@@ -125,6 +125,33 @@ public class Library {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
+	private Console console;
+
+	/** 
+	* @return the console
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public Console getConsole() {
+		// begin-user-code
+		return console;
+		// end-user-code
+	}
+
+	/** 
+	* @param console the console to set
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public void setConsole(Console console) {
+		// begin-user-code
+		this.console = console;
+		// end-user-code
+	}
+
+	/** 
+	* <!-- begin-UML-doc -->
+	* <!-- end-UML-doc -->
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
 	private Set<Account> account;
 
 	/** 
