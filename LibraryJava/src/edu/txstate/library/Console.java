@@ -10,64 +10,7 @@ public class Console {
 	
 	private static Library library = null;
 
-	/** 
-	* This function adds a new user to the library system.
-	*/
-	public void addNewUser() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function adds a new document to the library system.
-	*/
-	public void addNewDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/** 
-	* This function allows the user to search for a document based on title or author.
-	*/
-	public void searchDocuments() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function allows the user to borrow a document.
-	*/
-	public void borrowDocument() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function allows the user to return a document.
-	*/
-	public void returnDocument() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function displays all the loans.
-	*/
-	public void displayLoans() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function saves the state of the library and exits the system.
-	*/
-	public void saveAndExit() {
-		// TODO Auto-generated method stub
-
-	}
-	
 	public static void main(String args[]) {
-		Console console = new Console();
 		Scanner in = new Scanner(System.in);
 		// Ensure singleton library is created
 		if (library == null) {
@@ -92,27 +35,28 @@ public class Console {
 				selection = in.nextInt();
 				// Execute menu selection
 				switch(selection){
-				case 1: console.addNewUser();
+				case 1: library.addNewUser();
 						break;
-				case 2: console.addNewDocument();
+				case 2: library.addNewDocument();
 						break;
-				case 3: console.searchDocuments();
+				case 3: library.searchDocuments();
 						break;
-				case 4: console.borrowDocument();
+				case 4: library.borrowDocument();
 						break;
-				case 5: console.returnDocument();
+				case 5: library.returnDocument();
 						break;
-				case 6: console.displayLoans();
+				case 6: library.displayLoans();
 						break;
-				case 7: console.saveAndExit();
+				case 7: library.save();
 						break;
 				default: System.out.println("Invalid selection. Enter the number of the option.");
 				}
 			} while (selection != 7);
 		} catch (Exception e) {
-				System.out.println("Error" + e);
+				System.out.println("Error: " + e);
 		}
 		// Close scanner input stream
 		in.close();
+		System.out.println("Program Terminated");
 	}
 }

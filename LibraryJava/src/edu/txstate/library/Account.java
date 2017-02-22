@@ -1,119 +1,78 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 import java.util.Set;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This abstract class represents an account in the library system.
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public abstract class Account {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
+	
 	private int userId;
-
+	private int numDocsBorrowed;
+	private Set<Loan> loans;
+	
 	/** 
+	* This function returns the user's ID.
 	* @return the userId
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public int getUserId() {
-		// begin-user-code
 		return userId;
-		// end-user-code
 	}
 
 	/** 
+	* This function set's the user's ID.
 	* @param userId the userId to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setUserId(int userId) {
-		// begin-user-code
 		this.userId = userId;
-		// end-user-code
 	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private int numDocsBorrowed;
-
-	/** 
+	
+	/**
+	* This function returns the number of documents borrowed.
 	* @return the numDocsBorrowed
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public int getNumDocsBorrowed() {
-		// begin-user-code
 		return numDocsBorrowed;
-		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function sets the number of documents borrowed. 
 	* @param numDocsBorrowed the numDocsBorrowed to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setNumDocsBorrowed(int numDocsBorrowed) {
-		// begin-user-code
 		this.numDocsBorrowed = numDocsBorrowed;
-		// end-user-code
 	}
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Loan> loans;
-
-	/** 
+	/**
+	* This function returns all loans for the account.  
 	* @return the loans
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public Set<Loan> getLoans() {
-		// begin-user-code
 		return loans;
-		// end-user-code
 	}
 
 	/** 
+	* This function sets the loans.
 	* @param loans the loans to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setLoans(Set<Loan> loans) {
-		// begin-user-code
 		this.loans = loans;
-		// end-user-code
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function adds a loan to the library.
 	*/
 	public void addLoan() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function removes a loan from the account.
 	*/
 	public void removeLoan() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 }
