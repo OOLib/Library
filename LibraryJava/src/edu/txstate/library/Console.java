@@ -11,9 +11,7 @@ public class Console {
 	private static Library library = null;
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function adds a new user to the library system.
 	*/
 	public void addNewUser() {
 		// TODO Auto-generated method stub
@@ -21,84 +19,62 @@ public class Console {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function adds a new document to the library system.
 	*/
 	public void addNewDocument() {
-		// begin-user-code
 		// TODO Auto-generated method stub
-
-		// end-user-code
+		
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function allows the user to search for a document based on title or author.
 	*/
 	public void searchDocuments() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function allows the user to borrow a document.
 	*/
 	public void borrowDocument() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function allows the user to return a document.
 	*/
 	public void returnDocument() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function displays all the loans.
 	*/
 	public void displayLoans() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function saves the state of the library and exits the system.
 	*/
 	public void saveAndExit() {
-		// begin-user-code
 		// TODO Auto-generated method stub
 
-		// end-user-code
 	}
 	
 	public static void main(String args[]) {
 		Console console = new Console();
 		Scanner in = new Scanner(System.in);
-		// Initialize singleton library
+		// Ensure singleton library is created
 		if (library == null) {
 			library = new Library();
 		}
+		
+		// TODO Initialize library system from files
 		
 		// Menu display
 		System.out.println("Welcome to the Library System. Select an option below:\n"
@@ -116,19 +92,19 @@ public class Console {
 				selection = in.nextInt();
 				// Execute menu selection
 				switch(selection){
-				case 1: console.addNewUser(); System.out.println("1");
+				case 1: console.addNewUser();
 						break;
-				case 2: console.addNewDocument();System.out.println("2");
+				case 2: console.addNewDocument();
 						break;
-				case 3: console.searchDocuments();System.out.println("3");
+				case 3: console.searchDocuments();
 						break;
-				case 4: console.borrowDocument();System.out.println("4");
+				case 4: console.borrowDocument();
 						break;
-				case 5: console.returnDocument();System.out.println("5");
+				case 5: console.returnDocument();
 						break;
-				case 6: console.displayLoans();System.out.println("6");
+				case 6: console.displayLoans();
 						break;
-				case 7: console.saveAndExit();System.out.println("7");
+				case 7: console.saveAndExit();
 						break;
 				default: System.out.println("Invalid selection. Enter the number of the option.");
 				}

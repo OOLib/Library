@@ -3,7 +3,7 @@
 <!--Rational Software Architect Designer 9.6-->
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
 <?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:JavaTransformation50="http:///schemas/JavaTransformation50/_znHmkE3YEd-tPpJR7OP4Bg/34" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/JavaTransformation50/_znHmkE3YEd-tPpJR7OP4Bg/34 pathmap://TRANSFORM_JAVA5_PROFILES/JavaTransformProfile.epx#_znahgE3YEd-tPpJR7OP4Bg?JavaTransformation5.0/JavaTransformation50?">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:JavaTransformation50="http:///schemas/JavaTransformation50/_znHmkE3YEd-tPpJR7OP4Bg/34" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default? http:///schemas/JavaTransformation50/_znHmkE3YEd-tPpJR7OP4Bg/34 pathmap://TRANSFORM_JAVA5_PROFILES/JavaTransformProfile.epx#_znahgE3YEd-tPpJR7OP4Bg?JavaTransformation5.0/JavaTransformation50?">
   <uml:Package xmi:id="_oY9qIO5KEeazwPCNogiwLg" name="Library">
     <eAnnotations xmi:id="_oY9qIe5KEeazwPCNogiwLg" source="uml2.diagrams"/>
     <packageImport xmi:id="_oY9qIu5KEeazwPCNogiwLg">
@@ -209,19 +209,6 @@
             <children xmi:type="notation:SemanticListCompartment" xmi:id="_cKYEIPkQEeafLZkJs-wvbQ" visible="false" type="SignalCompartment"/>
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_cKYrMPkQEeafLZkJs-wvbQ" visible="false" type="StructureCompartment"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cKNFAfkQEeafLZkJs-wvbQ" x="27579"/>
-          </children>
-          <children xmi:type="umlnotation:UMLShape" xmi:id="_C6PAIPkREeafLZkJs-wvbQ" element="_C6KusPkREeafLZkJs-wvbQ" fontName=".SF NS Text" fontHeight="8" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
-            <children xmi:type="notation:DecorationNode" xmi:id="_C6PnMPkREeafLZkJs-wvbQ" type="ImageCompartment">
-              <layoutConstraint xmi:type="notation:Size" xmi:id="_C6PnMfkREeafLZkJs-wvbQ" width="1320" height="1320"/>
-            </children>
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_C6QOQPkREeafLZkJs-wvbQ" type="Stereotype"/>
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_C6QOQfkREeafLZkJs-wvbQ" type="Name"/>
-            <children xmi:type="notation:BasicDecorationNode" xmi:id="_C6QOQvkREeafLZkJs-wvbQ" type="Parent"/>
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_C6Q1UPkREeafLZkJs-wvbQ" type="AttributeCompartment"/>
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_C6Q1UfkREeafLZkJs-wvbQ" type="OperationCompartment"/>
-            <children xmi:type="notation:SemanticListCompartment" xmi:id="_C6Q1UvkREeafLZkJs-wvbQ" visible="false" type="SignalCompartment"/>
-            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_C6RcYPkREeafLZkJs-wvbQ" visible="false" type="StructureCompartment"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C6PAIfkREeafLZkJs-wvbQ" x="48818" y="1902"/>
           </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_jsC9IO5MEeazwPCNogiwLg" element="_jr5MIO5MEeazwPCNogiwLg" source="_LVWUgO5LEeazwPCNogiwLg" target="_TL7PMO5LEeazwPCNogiwLg" fontName=".SF NS Text" fontHeight="8" roundedBendpointsRadius="4" routing="Rectilinear" lineColor="8421504" lineWidth="1" showStereotype="Text">
@@ -776,16 +763,6 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_usUVUPkQEeafLZkJs-wvbQ" id="(0.500128966434336,0.9738549972186167)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_usVjcPkQEeafLZkJs-wvbQ" id="(0.5000038200265438,0.0)"/>
           </edges>
-          <edges xmi:type="umlnotation:UMLConnector" xmi:id="_F8i6kPkREeafLZkJs-wvbQ" element="_F8epIPkREeafLZkJs-wvbQ" source="_C6PAIPkREeafLZkJs-wvbQ" target="_VLZzoO5LEeazwPCNogiwLg" fontName=".SF NS Text" fontHeight="8" roundedBendpointsRadius="4" routing="Rectilinear" lineColor="8421504" lineWidth="1" showStereotype="Text">
-            <children xmi:type="notation:DecorationNode" xmi:id="_F8jhoPkREeafLZkJs-wvbQ" type="NameLabel">
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_F8jhovkREeafLZkJs-wvbQ" type="Stereotype"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_F8kIsPkREeafLZkJs-wvbQ" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F8jhofkREeafLZkJs-wvbQ" y="-247"/>
-            </children>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_F8i6kfkREeafLZkJs-wvbQ" points="[52, 131, 52, -6614]$[52, 6745, 52, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HfWKEPkREeafLZkJs-wvbQ" id="(0.5001324318809643,0.9229929000546152)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HfWxIPkREeafLZkJs-wvbQ" id="(0.5000080022680714,0.0)"/>
-          </edges>
         </contents>
       </eAnnotations>
       <packagedElement xmi:type="uml:Class" xmi:id="_2j43wO5KEeazwPCNogiwLg" name="Document" isAbstract="true">
@@ -831,7 +808,6 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_skd4APkQEeafLZkJs-wvbQ" value="1"/>
         </ownedAttribute>
         <ownedOperation xmi:id="_E997sO5LEeazwPCNogiwLg" name="overdueBookReminder">
-          <ownedParameter xmi:id="_rzigUO5aEeaXNuDeABuUPw" name="Account account"/>
           <ownedParameter xmi:id="_4WcBMO5PEeaXNuDeABuUPw" name="Parameter1" direction="return"/>
           <ownedParameter xmi:id="_znEYEPkQEeafLZkJs-wvbQ" name="Accountaccount"/>
         </ownedOperation>
@@ -971,17 +947,13 @@
         <ownedAttribute xmi:id="_iVOMwO5PEeaXNuDeABuUPw" name="duration" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_CTM6UO8WEeaxUYQ8qHAmow" name="MAX_STUDENT_LOAN_DURATION" visibility="private" isReadOnly="true">
+        <ownedAttribute xmi:id="_CTM6UO8WEeaxUYQ8qHAmow" name="MAX_STUDENT_LOAN_DURATION" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_K9ZckPGCEea8IfgUTxM7NA" value="6">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </defaultValue>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_K9ZckPGCEea8IfgUTxM7NA" value="6"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_Fg7akO8WEeaxUYQ8qHAmow" name="MAX_FACULTY_STAFF_LOAN_DURATION" visibility="private" isReadOnly="true">
+        <ownedAttribute xmi:id="_Fg7akO8WEeaxUYQ8qHAmow" name="MAX_FACULTY_STAFF_LOAN_DURATION" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_NIn-APGCEea8IfgUTxM7NA" value="12">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </defaultValue>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_NIn-APGCEea8IfgUTxM7NA" value="12"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_al1b8PGAEea8IfgUTxM7NA" name="document" visibility="private" type="_2j43wO5KEeazwPCNogiwLg"/>
       </packagedElement>
@@ -1027,9 +999,13 @@
       <packagedElement xmi:type="uml:Association" xmi:id="_WaTS4O5PEeaXNuDeABuUPw" memberEnd="_WaT58O5PEeaXNuDeABuUPw _WaVIEe5PEeaXNuDeABuUPw"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_XyxhsO5PEeaXNuDeABuUPw" memberEnd="_XyyIwO5PEeaXNuDeABuUPw _Xyz98O5PEeaXNuDeABuUPw"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_cH9pUPkQEeafLZkJs-wvbQ" name="Console">
-        <ownedAttribute xmi:id="_skWjQPkQEeafLZkJs-wvbQ" name="library" visibility="private" type="_CK_dwO5LEeazwPCNogiwLg" association="_skUuEPkQEeafLZkJs-wvbQ">
+        <ownedComment xmi:id="_ZSD8wPkcEeafLZkJs-wvbQ" annotatedElement="_cH9pUPkQEeafLZkJs-wvbQ">
+          <body>This&amp;nbsp;class&amp;nbsp;is&amp;nbsp;the&amp;nbsp;user&amp;nbsp;interface&amp;nbsp;for&amp;nbsp;the&amp;nbsp;library&amp;nbsp;system.&lt;br>@author&amp;nbsp;Hannah&amp;nbsp;Burzynski,&amp;nbsp;Alexander&amp;nbsp;Wagstaff</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_skWjQPkQEeafLZkJs-wvbQ" name="library" visibility="private" isStatic="true" type="_CK_dwO5LEeazwPCNogiwLg" association="_skUuEPkQEeafLZkJs-wvbQ">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_skbbwPkQEeafLZkJs-wvbQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ska0sPkQEeafLZkJs-wvbQ" value="1"/>
+          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_ZS7fcPkcEeafLZkJs-wvbQ"/>
         </ownedAttribute>
         <ownedOperation xmi:id="_gkYKQPkQEeafLZkJs-wvbQ" name="addNewUser"/>
         <ownedOperation xmi:id="_hNmtcPkQEeafLZkJs-wvbQ" name="addNewDocument"/>
@@ -1038,11 +1014,15 @@
         <ownedOperation xmi:id="_lwwIgPkQEeafLZkJs-wvbQ" name="returnDocument"/>
         <ownedOperation xmi:id="_m7jHsPkQEeafLZkJs-wvbQ" name="displayLoans"/>
         <ownedOperation xmi:id="_nwRJMPkQEeafLZkJs-wvbQ" name="saveAndExit"/>
+        <ownedOperation xmi:id="_ZTKwAPkcEeafLZkJs-wvbQ" name="main" visibility="public" isStatic="true">
+          <ownedParameter xmi:id="_ZTLXEPkcEeafLZkJs-wvbQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZTL-IPkcEeafLZkJs-wvbQ" value="*"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZTMlMPkcEeafLZkJs-wvbQ"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_skUuEPkQEeafLZkJs-wvbQ" memberEnd="_skWjQPkQEeafLZkJs-wvbQ _skcp4PkQEeafLZkJs-wvbQ"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_C6KusPkREeafLZkJs-wvbQ" name="LibrarianAccount">
-        <generalization xmi:id="_F8epIPkREeafLZkJs-wvbQ" general="_VLXXYO5LEeazwPCNogiwLg"/>
-      </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_oY9qI-5KEeazwPCNogiwLg">
       <eAnnotations xmi:id="_oY9qJO5KEeazwPCNogiwLg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1082,4 +1062,6 @@
   <JavaTransformation50:JavaCollection2 xmi:id="_9GxMsPkQEeafLZkJs-wvbQ" collectionType="java.util.Set" base_TypedElement="_XruJUPGCEea8IfgUTxM7NA"/>
   <JavaTransformation50:JavaCollection2 xmi:id="_9GzB4PkQEeafLZkJs-wvbQ" collectionType="java.util.Set" base_TypedElement="_XyyIwO5PEeaXNuDeABuUPw"/>
   <JavaTransformation50:JavaCollection2 xmi:id="_9G0QAPkQEeafLZkJs-wvbQ" collectionType="java.util.Set" base_TypedElement="_8AP6EPF8Eea8IfgUTxM7NA"/>
+  <Default:Documentation xmi:id="_gyQXwPkcEeafLZkJs-wvbQ" base_Comment="_ZSD8wPkcEeafLZkJs-wvbQ"/>
+  <JavaTransformation50:JavaArray xmi:id="_gySM8PkcEeafLZkJs-wvbQ" base_TypedElement="_ZTLXEPkcEeafLZkJs-wvbQ"/>
 </xmi:XMI>
