@@ -1,15 +1,10 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 import java.util.Set;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class contains the student account
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class StudentAccount extends Account {
 	/** 
@@ -19,6 +14,19 @@ public class StudentAccount extends Account {
 	*/
 	private Set<Loan> loan;
 
+	StudentAccount(int id, String name, String type) {
+		this.id = id;
+		this.name = name;
+		this.type = type;
+	}
+	
+	StudentAccount() {
+		this.id = 0;
+		this.name = "";
+		this.type = "student";
+	}
+	
+	
 	/** 
 	* @return the loan
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"

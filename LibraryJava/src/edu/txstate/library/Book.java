@@ -1,6 +1,3 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 /** 

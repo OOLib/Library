@@ -8,16 +8,33 @@ import java.util.Set;
  */
 public abstract class Account {
 	
-	private int userId;
-	private int numDocsBorrowed;
-	private Set<Loan> loans;
+	protected int id;
+	protected String name;
+	protected String type;
+	protected int numDocsBorrowed;
+	protected Set<Loan> loans;
+	
+	/** 
+	* This function returns the user's ID.
+	*/
+	Account(int id, String name, String type) {
+		this.id = id;
+		this.name = name;
+		this.type = type;
+	}
+	
+	Account() {
+		this.id = 0;
+		this.name = "";
+		this.type = "student";
+	}
 	
 	/** 
 	* This function returns the user's ID.
 	* @return the userId
 	*/
 	public int getUserId() {
-		return userId;
+		return id;
 	}
 
 	/** 
@@ -25,7 +42,7 @@ public abstract class Account {
 	* @param userId the userId to set
 	*/
 	public void setUserId(int userId) {
-		this.userId = userId;
+		this.id = userId;
 	}
 	
 	/**

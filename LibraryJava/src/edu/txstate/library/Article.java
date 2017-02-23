@@ -9,6 +9,7 @@ public class Article {
 	private int firstPage;
 	private int lastPage;
 	private Journal journal;
+	private ConferenceProceeding conferenceProceeding;
 	
 	/** 
 	* This function returns the first page number of the article.
@@ -43,45 +44,34 @@ public class Article {
 	}
 
 	/** 
+	* This function returns the journal. 
 	* @return the journal
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public Journal getJournal() {
 		return journal;
 	}
 
 	/** 
+	* This function sets the journal
 	* @param journal the journal to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setJournal(Journal journal) {
 		this.journal = journal;
 	}
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private ConferenceProceeding conferenceProceeding;
-
-	/** 
+	/**
+	* This function returns the conference proceeding object. 
 	* @return the conferenceProceeding
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public ConferenceProceeding getConferenceProceeding() {
-		// begin-user-code
 		return conferenceProceeding;
-		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function sets the conferenceproceeding set.  
 	* @param conferenceProceeding the conferenceProceeding to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setConferenceProceeding(ConferenceProceeding conferenceProceeding) {
-		// begin-user-code
 		this.conferenceProceeding = conferenceProceeding;
-		// end-user-code
 	}
 }

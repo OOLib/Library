@@ -1,6 +1,10 @@
 package edu.txstate.library;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /** 
  * This class is the user interface for the library system.
@@ -16,8 +20,50 @@ public class Console {
 		if (library == null) {
 			library = new Library();
 		}
-		
+		//-------------------------------------------------------------------------
 		// TODO Initialize library system from files
+		// Initialize User Accounts
+        Scanner inFile = null;
+        
+		try {
+			inFile = new Scanner(new FileReader("res/users.txt"));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+        //Read from files
+		StudentAccount account = null;
+		Set<Account> accounts = null;
+		while(inFile.hasNext()){
+	        String line = inFile.nextLine();
+	        System.out.println(line);
+	        String[] words = line.split("\t");
+	        
+	        int id = Integer.parseInt(words[0]);
+	        String name = words[1];
+	        String type = words[2];
+	        
+	        // Add Student Accounts
+	        if (type.equals("Student")) {
+	        	account = new StudentAccount(id, name, type);
+	        }
+	        accounts = new HashSet<Account>();
+	        accounts.add(account);
+	        
+	        // TEST
+	        // Add Faculty Accounts
+	        // Add Staff Accounts
+	        
+		}
+		// TEST - display the set
+		System.out.println(accounts);
+        inFile.close(); //Close file
+		
+		// Initialize Books
+		
+		// Initialize Journals
+        //-------------------------------------------------------------------------
 		
 		// Menu display
 		System.out.println("Welcome to the Library System. Select an option below:\n"

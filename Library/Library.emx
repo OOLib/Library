@@ -223,6 +223,32 @@
             <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_f1SR0PkfEeafLZkJs-wvbQ" visible="false" type="StructureCompartment"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f1P1kfkfEeafLZkJs-wvbQ" x="35504" y="30749"/>
           </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_0LFK0PliEeazt4t40Yox_A" element="_0J4Q8PliEeazt4t40Yox_A" fontName=".SF NS Text" fontHeight="8" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+            <children xmi:type="notation:DecorationNode" xmi:id="_0LKDUPliEeazt4t40Yox_A" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_0LKDUfliEeazt4t40Yox_A" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_0LMfkPliEeazt4t40Yox_A" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_0LMfkfliEeazt4t40Yox_A" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_0LNGoPliEeazt4t40Yox_A" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_0LNtsPliEeazt4t40Yox_A" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_0LOUwPliEeazt4t40Yox_A" type="OperationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_0LPi4PliEeazt4t40Yox_A" visible="false" type="SignalCompartment"/>
+            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_0LQxAPliEeazt4t40Yox_A" visible="false" type="StructureCompartment"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0LFK0fliEeazt4t40Yox_A" x="12680" y="2219"/>
+          </children>
+          <children xmi:type="umlnotation:UMLShape" xmi:id="_5J8RgPliEeazt4t40Yox_A" element="_5J2x8PliEeazt4t40Yox_A" fontName=".SF NS Text" fontHeight="8" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+            <children xmi:type="notation:DecorationNode" xmi:id="_5J84kPliEeazt4t40Yox_A" type="ImageCompartment">
+              <layoutConstraint xmi:type="notation:Size" xmi:id="_5J84kfliEeazt4t40Yox_A" width="1320" height="1320"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_5J84kvliEeazt4t40Yox_A" type="Stereotype"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_5J84k_liEeazt4t40Yox_A" type="Name"/>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_5J84lPliEeazt4t40Yox_A" type="Parent"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_5J9foPliEeazt4t40Yox_A" type="AttributeCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_5J9fofliEeazt4t40Yox_A" type="OperationCompartment"/>
+            <children xmi:type="notation:SemanticListCompartment" xmi:id="_5J-GsPliEeazt4t40Yox_A" visible="false" type="SignalCompartment"/>
+            <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_5J-twPliEeazt4t40Yox_A" visible="false" type="StructureCompartment"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5J8RgfliEeazt4t40Yox_A" x="12680" y="4121"/>
+          </children>
           <element xsi:nil="true"/>
           <edges xmi:type="umlnotation:UMLConnector" xmi:id="_jsC9IO5MEeazwPCNogiwLg" element="_jr5MIO5MEeazwPCNogiwLg" source="_LVWUgO5LEeazwPCNogiwLg" target="_TL7PMO5LEeazwPCNogiwLg" fontName=".SF NS Text" fontHeight="8" roundedBendpointsRadius="4" routing="Rectilinear" lineColor="8421504" lineWidth="1" showStereotype="Text">
             <children xmi:type="notation:DecorationNode" xmi:id="_jsFZYO5MEeazwPCNogiwLg" type="NameLabel">
@@ -1146,6 +1172,8 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_i4b5wPkfEeafLZkJs-wvbQ" memberEnd="_i4cg0PkfEeafLZkJs-wvbQ _i4du8PkfEeafLZkJs-wvbQ"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_sr-3cPkfEeafLZkJs-wvbQ" memberEnd="_sr_egPkfEeafLZkJs-wvbQ _ssAsoPkfEeafLZkJs-wvbQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0J4Q8PliEeazt4t40Yox_A" name="DocumentDirectory"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5J2x8PliEeazt4t40Yox_A" name="LoanDirectory"/>
     </packagedElement>
     <profileApplication xmi:id="_oY9qI-5KEeazwPCNogiwLg">
       <eAnnotations xmi:id="_oY9qJO5KEeazwPCNogiwLg" source="http://www.eclipse.org/uml2/2.0.0/UML">
