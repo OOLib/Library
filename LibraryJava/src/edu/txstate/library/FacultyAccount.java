@@ -18,6 +18,7 @@ public class FacultyAccount extends Account {
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	private Set<Loan> loan;
+
 	/** 
 	* This is a constructor function.
 	*/
@@ -26,14 +27,16 @@ public class FacultyAccount extends Account {
 		this.name = name;
 		this.type = type;
 	}
+
 	/** 
 	* This is a constructor function.
-	*/	
+	*/
 	FacultyAccount() {
 		this.id = 0;
 		this.name = "";
 		this.type = "FACULTY";
 	}
+
 	/** 
 	* @return the loan
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"

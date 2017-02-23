@@ -5,12 +5,12 @@ package edu.txstate.library;
  * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class Article {
-	
+
 	private int firstPage;
 	private int lastPage;
 	private Journal journal;
 	private ConferenceProceeding conferenceProceeding;
-	
+
 	/** 
 	* This function returns the first page number of the article.
 	* @return the firstPage

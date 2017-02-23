@@ -903,6 +903,13 @@
           <ownedParameter xmi:id="_2aQKMPk4EeafLZkJs-wvbQ" name="account"/>
           <ownedParameter xmi:id="_znEYEPkQEeafLZkJs-wvbQ" name="Accountaccount"/>
         </ownedOperation>
+        <ownedOperation xmi:id="_m49lgPoHEeaVp7MR1SodNw" name="overdueBookReminder" visibility="public">
+          <ownedComment xmi:id="_m49lgfoHEeaVp7MR1SodNw" annotatedElement="_m49lgPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;function&amp;nbsp;sends&amp;nbsp;an&amp;nbsp;overdueBookReminder&amp;nbsp;message&amp;nbsp;to&amp;nbsp;the&amp;nbsp;user&amp;nbsp;if&amp;nbsp;they&amp;nbsp;have&amp;nbsp;not&amp;nbsp;returned&amp;nbsp;the&amp;nbsp;document&amp;nbsp;by&amp;nbsp;the&amp;nbsp;time&amp;nbsp;the&amp;nbsp;loan&amp;nbsp;has&amp;nbsp;ended.&lt;br>@param&amp;nbsp;account&lt;br>@return</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_m4-zoPoHEeaVp7MR1SodNw" name="ReturnParameter" direction="return"/>
+          <ownedParameter xmi:id="_m5ABwPoHEeaVp7MR1SodNw" name="account"/>
+        </ownedOperation>
         <ownedOperation xmi:id="_2aQxQPk4EeafLZkJs-wvbQ" name="addNewUser" visibility="public">
           <ownedComment xmi:id="_2aQxQfk4EeafLZkJs-wvbQ" annotatedElement="_2aQxQPk4EeafLZkJs-wvbQ">
             <body>This&amp;nbsp;function&amp;nbsp;adds&amp;nbsp;a&amp;nbsp;new&amp;nbsp;user&amp;nbsp;to&amp;nbsp;the&amp;nbsp;library&amp;nbsp;system.</body>
@@ -975,6 +982,28 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_22V84O5OEeaXNuDeABuUPw" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_22VV0O5OEeaXNuDeABuUPw" value="1"/>
         </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_m0O2gPoHEeaVp7MR1SodNw" name="LibrarianAccount">
+        <generalization xmi:id="_m5ei4PoHEeaVp7MR1SodNw" general="_P_AnQO5LEeazwPCNogiwLg"/>
+        <ownedOperation xmi:id="_m5ZDUPoHEeaVp7MR1SodNw" name="LibrarianAccount" visibility="package">
+          <ownedComment xmi:id="_m5aRcPoHEeaVp7MR1SodNw" annotatedElement="_m5ZDUPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_m5bfkPoHEeaVp7MR1SodNw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m5cGoPoHEeaVp7MR1SodNw" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m5cGofoHEeaVp7MR1SodNw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_m5ctsPoHEeaVp7MR1SodNw" name="LibrarianAccount" visibility="package">
+          <ownedComment xmi:id="_m5dUwPoHEeaVp7MR1SodNw" annotatedElement="_m5ctsPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_JRipsO5LEeazwPCNogiwLg" name="Journal">
         <generalization xmi:id="_tmydEO5OEeaXNuDeABuUPw" general="_2j43wO5KEeazwPCNogiwLg"/>
@@ -1054,16 +1083,41 @@
         <ownedComment xmi:id="_2Z7aEPk4EeafLZkJs-wvbQ" annotatedElement="_P_AnQO5LEeazwPCNogiwLg">
           <body>This&amp;nbsp;abstract&amp;nbsp;class&amp;nbsp;represents&amp;nbsp;an&amp;nbsp;account&amp;nbsp;in&amp;nbsp;the&amp;nbsp;library&amp;nbsp;system.&lt;br>@author&amp;nbsp;Hannah&amp;nbsp;Burzynski,&amp;nbsp;Alexander&amp;nbsp;Wagstaff</body>
         </ownedComment>
-        <ownedAttribute xmi:id="_kyJ-sO5OEeaXNuDeABuUPw" name="userId" visibility="private">
+        <ownedAttribute xmi:id="_m6XTsPoHEeaVp7MR1SodNw" name="id" visibility="protected">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_loPSIO5OEeaXNuDeABuUPw" name="numDocsBorrowed" visibility="private">
+        <ownedAttribute xmi:id="_m6X6wPoHEeaVp7MR1SodNw" name="name" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_m6Zv8PoHEeaVp7MR1SodNw" name="type" visibility="protected">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_loPSIO5OEeaXNuDeABuUPw" name="numDocsBorrowed" visibility="protected">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_aa_BYPGBEea8IfgUTxM7NA" name="loans" visibility="private" type="_TL4y8O5LEeazwPCNogiwLg">
+        <ownedAttribute xmi:id="_aa_BYPGBEea8IfgUTxM7NA" name="loans" visibility="protected" type="_TL4y8O5LEeazwPCNogiwLg">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GttJAfGCEea8IfgUTxM7NA" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GttJAPGCEea8IfgUTxM7NA"/>
         </ownedAttribute>
+        <ownedOperation xmi:id="_m6czQPoHEeaVp7MR1SodNw" name="Account" visibility="package">
+          <ownedComment xmi:id="_m6daUPoHEeaVp7MR1SodNw" annotatedElement="_m6czQPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_m6eocPoHEeaVp7MR1SodNw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m6f2kPoHEeaVp7MR1SodNw" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m6gdoPoHEeaVp7MR1SodNw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_m6gdofoHEeaVp7MR1SodNw" name="Account" visibility="package">
+          <ownedComment xmi:id="_m6hEsPoHEeaVp7MR1SodNw" annotatedElement="_m6gdofoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+        </ownedOperation>
         <ownedOperation xmi:id="_SISn4PGAEea8IfgUTxM7NA" name="addLoan">
           <ownedComment xmi:id="_2a7fofk4EeafLZkJs-wvbQ" annotatedElement="_SISn4PGAEea8IfgUTxM7NA">
             <body>This&amp;nbsp;function&amp;nbsp;adds&amp;nbsp;a&amp;nbsp;loan&amp;nbsp;to&amp;nbsp;the&amp;nbsp;library.</body>
@@ -1093,20 +1147,33 @@
         </ownedAttribute>
         <ownedAttribute xmi:id="_CTM6UO8WEeaxUYQ8qHAmow" name="MAX_STUDENT_LOAN_DURATION" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_K9ZckPGCEea8IfgUTxM7NA" value="6"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_Fg7akO8WEeaxUYQ8qHAmow" name="MAX_FACULTY_STAFF_LOAN_DURATION" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_NIn-APGCEea8IfgUTxM7NA" value="12"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_al1b8PGAEea8IfgUTxM7NA" name="document" visibility="private" type="_2j43wO5KEeazwPCNogiwLg"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_TrPocO5LEeazwPCNogiwLg" name="StudentAccount">
+        <ownedComment xmi:id="_m4CYcPoHEeaVp7MR1SodNw" annotatedElement="_TrPocO5LEeazwPCNogiwLg">
+          <body>This&amp;nbsp;class&amp;nbsp;contains&amp;nbsp;the&amp;nbsp;student&amp;nbsp;account&lt;br>@author&amp;nbsp;Hannah&amp;nbsp;Burzynski,&amp;nbsp;Alexander&amp;nbsp;Wagstaff</body>
+        </ownedComment>
         <generalization xmi:id="_i56gIO5NEeazwPCNogiwLg" general="_P_AnQO5LEeazwPCNogiwLg"/>
         <ownedAttribute xmi:id="_XyyIwO5PEeaXNuDeABuUPw" name="loan" visibility="private" type="_TL4y8O5LEeazwPCNogiwLg" association="_XyxhsO5PEeaXNuDeABuUPw">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XyzW4O5PEeaXNuDeABuUPw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xyyv0O5PEeaXNuDeABuUPw"/>
         </ownedAttribute>
+        <ownedOperation xmi:id="_m6KfYPoHEeaVp7MR1SodNw" name="StudentAccount" visibility="package">
+          <ownedParameter xmi:id="_m6LtgPoHEeaVp7MR1SodNw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m6MUkPoHEeaVp7MR1SodNw" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m6M7oPoHEeaVp7MR1SodNw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_m6NisPoHEeaVp7MR1SodNw" name="StudentAccount" visibility="package"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_Uh3ucO5LEeazwPCNogiwLg" name="FacultyAccount">
         <generalization xmi:id="_iIGosO5NEeazwPCNogiwLg" general="_P_AnQO5LEeazwPCNogiwLg"/>
@@ -1114,6 +1181,25 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WaVIEO5PEeaXNuDeABuUPw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WaUhAO5PEeaXNuDeABuUPw"/>
         </ownedAttribute>
+        <ownedOperation xmi:id="_m54ykPoHEeaVp7MR1SodNw" name="FacultyAccount" visibility="package">
+          <ownedComment xmi:id="_m54ykfoHEeaVp7MR1SodNw" annotatedElement="_m54ykPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_m56AsPoHEeaVp7MR1SodNw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m56AsfoHEeaVp7MR1SodNw" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m56nwPoHEeaVp7MR1SodNw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_m57O0PoHEeaVp7MR1SodNw" name="FacultyAccount" visibility="package">
+          <ownedComment xmi:id="_m5714PoHEeaVp7MR1SodNw" annotatedElement="_m57O0PoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_VLXXYO5LEeazwPCNogiwLg" name="StaffAccount">
         <generalization xmi:id="_ifMTAO5NEeazwPCNogiwLg" general="_P_AnQO5LEeazwPCNogiwLg"/>
@@ -1121,6 +1207,25 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VSD4cO5PEeaXNuDeABuUPw" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VSDRYO5PEeaXNuDeABuUPw"/>
         </ownedAttribute>
+        <ownedOperation xmi:id="_m5QgcPoHEeaVp7MR1SodNw" name="StaffAccount" visibility="package">
+          <ownedComment xmi:id="_m5RHgPoHEeaVp7MR1SodNw" annotatedElement="_m5QgcPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_m5RukPoHEeaVp7MR1SodNw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m5SVoPoHEeaVp7MR1SodNw" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_m5SVofoHEeaVp7MR1SodNw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_m5S8sPoHEeaVp7MR1SodNw" name="StaffAccount" visibility="package">
+          <ownedComment xmi:id="_m5UK0PoHEeaVp7MR1SodNw" annotatedElement="_m5S8sPoHEeaVp7MR1SodNw">
+            <body>This&amp;nbsp;is&amp;nbsp;a&amp;nbsp;constructor&amp;nbsp;function.</body>
+          </ownedComment>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_jOU0cO5OEeaXNuDeABuUPw" memberEnd="_jOYe0O5OEeaXNuDeABuUPw _jOfMgO5OEeaXNuDeABuUPw">
         <ownedEnd xmi:id="_jOfMgO5OEeaXNuDeABuUPw" name="" visibility="private" type="_CK_dwO5LEeazwPCNogiwLg" association="_jOU0cO5OEeaXNuDeABuUPw">
@@ -1228,4 +1333,16 @@
   <Default:Documentation xmi:id="_3-K0APk4EeafLZkJs-wvbQ" base_Comment="_2a7fofk4EeafLZkJs-wvbQ"/>
   <Default:Documentation xmi:id="_3-MCIPk4EeafLZkJs-wvbQ" base_Comment="_2aTNgPk4EeafLZkJs-wvbQ"/>
   <Default:Documentation xmi:id="_3-NQQPk4EeafLZkJs-wvbQ" base_Comment="_2aO8EPk4EeafLZkJs-wvbQ"/>
+  <JavaTransformation50:JavaCollection2 xmi:id="_snywkPoHEeaVp7MR1SodNw" collectionType="java.util.Set" base_TypedElement="_sr_egPkfEeafLZkJs-wvbQ"/>
+  <Default:Documentation xmi:id="_sn1M0PoHEeaVp7MR1SodNw" base_Comment="_m6hEsPoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_sn3CAPoHEeaVp7MR1SodNw" base_Comment="_m4CYcPoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_sn4QIPoHEeaVp7MR1SodNw" base_Comment="_m54ykfoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_sn6FUPoHEeaVp7MR1SodNw" base_Comment="_m6daUPoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_sn7TcPoHEeaVp7MR1SodNw" base_Comment="_m5RHgPoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_sn9vsPoHEeaVp7MR1SodNw" base_Comment="_m5UK0PoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_sn-90PoHEeaVp7MR1SodNw" base_Comment="_m49lgfoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_soAzAPoHEeaVp7MR1SodNw" base_Comment="_m5dUwPoHEeaVp7MR1SodNw"/>
+  <Default:Documentation xmi:id="_soCoMPoHEeaVp7MR1SodNw" base_Comment="_m5714PoHEeaVp7MR1SodNw"/>
+  <JavaTransformation50:JavaCollection2 xmi:id="_soD2UPoHEeaVp7MR1SodNw" collectionType="java.util.Set" base_TypedElement="_i4cg0PkfEeafLZkJs-wvbQ"/>
+  <Default:Documentation xmi:id="_soFrgPoHEeaVp7MR1SodNw" base_Comment="_m5aRcPoHEeaVp7MR1SodNw"/>
 </xmi:XMI>

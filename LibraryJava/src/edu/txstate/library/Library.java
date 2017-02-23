@@ -1,5 +1,9 @@
 package edu.txstate.library;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 /** 
@@ -13,6 +17,99 @@ public class Library {
 	private Set<Document> docsBorrowed;
 	private Set<Document> documents;
 	private Set<Account> accounts;
+	
+	Library() {
+		//-------------------------------------------------------------------------
+		// TODO Initialize library system from files
+		//-------------------------------------------------------------------------
+
+		// Initialize User Accounts
+		Scanner inFile = null;
+
+		try {
+			inFile = new Scanner(new FileReader("res/users.txt"));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		// Read from files
+		// id, name, type
+		Set<Account> accounts = new HashSet<Account>();
+		while (inFile.hasNext()) {
+			String line = inFile.nextLine();
+			//TEST
+			System.out.println(line);
+			String[] words = line.split("\t");
+
+			// Add Student Accounts
+			if (words[2].toUpperCase().equals("STUDENT")) {
+				accounts.add(new StudentAccount(Integer.parseInt(words[0]), words[1], words[2]));
+			}
+			// Add Faculty Accounts
+			if (words[2].toUpperCase().equals("FACULTY")) {
+				accounts.add(new FacultyAccount(Integer.parseInt(words[0]), words[1], words[2]));
+			}
+			// Add Staff Accounts
+			if (words[2].toUpperCase().equals("STAFF")) {
+				accounts.add(new StaffAccount(Integer.parseInt(words[0]), words[1], words[2]));
+			}
+			// Add Librarian Accounts
+			if (words[2].toUpperCase().equals("LIBRARIAN")) {
+				accounts.add(new LibrarianAccount(Integer.parseInt(words[0]), words[1], words[2]));
+			}
+		}
+		// TEST - display the set
+		for (Account account : accounts) {
+			System.out.println(account.getId() + "\t" + account.getName() + "\t" + account.getType());
+		}
+		inFile.close(); //Close file
+
+		// Initialize Books
+		inFile = null;
+
+		try {
+			inFile = new Scanner(new FileReader("res/books.txt"));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		//Read from files
+		// title, publisher, date, isbn, copies, author
+		Set<Book> books = new HashSet<Book>();
+		while (inFile.hasNext()) {
+			String line = inFile.nextLine();
+			String[] words = line.split("\t");
+			
+			// Add book to set
+			books.add(new Book(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], false));
+		}
+		// TEST - display the set
+		for (Book book : books) {
+			System.out.println(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getPublicationDate());
+		}
+		inFile.close();
+
+		// Initialize Journals
+		// title, date, volume, issue, publisher, articles
+
+		//-------------------------------------------------------------------------
+		// Initialization finished
+		//-------------------------------------------------------------------------
+		
+	}
+
+	/** 
+	* @return the accounts
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public Set<Account> getAccounts() {
+		// begin-user-code
+		return accounts;
+		// end-user-code
+	}
+
 	private Console console;
 
 	/**
@@ -30,6 +127,13 @@ public class Library {
 	public void setNumDocsBorrowed(int numDocsBorrowed) {
 		this.numDocsBorrowed = numDocsBorrowed;
 	}
+
+	/** 
+	* <!-- begin-UML-doc -->
+	* <!-- end-UML-doc -->
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	private Set<Account> account;
 
 	/**
 	* This function returns the set of documents borrowed.
@@ -87,6 +191,22 @@ public class Library {
 		this.console = console;
 	}
 
+	/** 
+	* <!-- begin-UML-doc -->
+	* This&nbsp;function&nbsp;sends&nbsp;an&nbsp;overdueBookReminder&nbsp;message&nbsp;to&nbsp;the&nbsp;user&nbsp;if&nbsp;they&nbsp;have&nbsp;not&nbsp;returned&nbsp;the&nbsp;document&nbsp;by&nbsp;the&nbsp;time&nbsp;the&nbsp;loan&nbsp;has&nbsp;ended.<br>@param&nbsp;account<br>@return
+	* <!-- end-UML-doc -->
+	* @param account
+	* @param Accountaccount
+	* @return
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public Object overdueBookReminder(Object account, Object Accountaccount) {
+		// begin-user-code
+		// TODO Auto-generated method stub
+		return null;
+		// end-user-code
+	}
+
 	/**
 	* This function returns the set of accounts. 
 	* @return the account
@@ -99,8 +219,10 @@ public class Library {
 	* @param account the account to set
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public void setAccount(Set<Account> accounts) {
-		this.accounts = accounts;
+	public void setAccount(Set<Account> account) {
+		// begin-user-code
+		this.account = account;
+		// end-user-code
 	}
 
 	/**
@@ -128,7 +250,7 @@ public class Library {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	/** 
 	* This function adds a new user to the library system.
 	*/
@@ -142,7 +264,7 @@ public class Library {
 	*/
 	public void addNewDocument() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	/** 
@@ -159,6 +281,30 @@ public class Library {
 	public void borrowDocument() {
 		// TODO Auto-generated method stub
 
+	}
+
+	/** 
+	* <!-- begin-UML-doc -->
+	* <!-- end-UML-doc -->
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public void checkoutDocument() {
+		// begin-user-code
+		// TODO Auto-generated method stub
+
+		// end-user-code
+	}
+
+	/** 
+	* <!-- begin-UML-doc -->
+	* <!-- end-UML-doc -->
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public void searchLibrary() {
+		// begin-user-code
+		// TODO Auto-generated method stub
+
+		// end-user-code
 	}
 
 	/** 

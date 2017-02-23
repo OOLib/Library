@@ -1,15 +1,10 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 import java.util.Set;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class represents a journal in the library.
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class Journal extends Document {
 	/** 
@@ -18,6 +13,7 @@ public class Journal extends Document {
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	private int volume;
+	// title, date, volume, issue, publisher, articles
 
 	/** 
 	* @return the volume
@@ -171,6 +167,33 @@ public class Journal extends Document {
 	public void setArticles(Set<Article> articles) {
 		// begin-user-code
 		this.articles = articles;
+		// end-user-code
+	}
+
+	/** 
+	* <!-- begin-UML-doc -->
+	* <!-- end-UML-doc -->
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	private Set<Author> author;
+
+	/** 
+	* @return the author
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public Set<Author> getAuthor() {
+		// begin-user-code
+		return author;
+		// end-user-code
+	}
+
+	/** 
+	* @param author the author to set
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public void setAuthor(Set<Author> author) {
+		// begin-user-code
+		this.author = author;
 		// end-user-code
 	}
 }

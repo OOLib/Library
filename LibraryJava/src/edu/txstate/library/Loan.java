@@ -123,7 +123,7 @@ public abstract class Loan {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	private int MAX_STUDENT_LOAN_DURATION = 6;
+	private int MAX_STUDENT_LOAN_DURATION = new Integer(6);
 
 	/** 
 	* @return the MAX_STUDENT_LOAN_DURATION
@@ -136,11 +136,21 @@ public abstract class Loan {
 	}
 
 	/** 
+	* @param MAX_STUDENT_LOAN_DURATION the MAX_STUDENT_LOAN_DURATION to set
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public void setMAX_STUDENT_LOAN_DURATION(int MAX_STUDENT_LOAN_DURATION) {
+		// begin-user-code
+		this.MAX_STUDENT_LOAN_DURATION = MAX_STUDENT_LOAN_DURATION;
+		// end-user-code
+	}
+
+	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	private int MAX_FACULTY_STAFF_LOAN_DURATION = 12;
+	private int MAX_FACULTY_STAFF_LOAN_DURATION = new Integer(12);
 
 	/** 
 	* @return the MAX_FACULTY_STAFF_LOAN_DURATION
@@ -149,6 +159,16 @@ public abstract class Loan {
 	public int getMAX_FACULTY_STAFF_LOAN_DURATION() {
 		// begin-user-code
 		return MAX_FACULTY_STAFF_LOAN_DURATION;
+		// end-user-code
+	}
+
+	/** 
+	* @param MAX_FACULTY_STAFF_LOAN_DURATION the MAX_FACULTY_STAFF_LOAN_DURATION to set
+	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	*/
+	public void setMAX_FACULTY_STAFF_LOAN_DURATION(int MAX_FACULTY_STAFF_LOAN_DURATION) {
+		// begin-user-code
+		this.MAX_FACULTY_STAFF_LOAN_DURATION = MAX_FACULTY_STAFF_LOAN_DURATION;
 		// end-user-code
 	}
 

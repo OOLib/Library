@@ -7,13 +7,13 @@ import java.util.Set;
  * @author Hannah Burzynski, Alexander Wagstaff
  */
 public abstract class Account {
-	
+
 	protected int id;
 	protected String name;
 	protected String type;
 	protected int numDocsBorrowed;
 	protected Set<Loan> loans;
-	
+
 	/** 
 	* This is a constructor function.
 	*/
@@ -22,15 +22,16 @@ public abstract class Account {
 		this.name = name;
 		this.type = type;
 	}
+
 	/** 
 	* This is a constructor function.
-	*/	
+	*/
 	Account() {
 		this.id = 0;
 		this.name = "";
 		this.type = "";
 	}
-	
+
 	/** 
 	* This function returns the user's ID.
 	* @return the id
@@ -38,6 +39,7 @@ public abstract class Account {
 	public int getId() {
 		return id;
 	}
+
 	/** 
 	* This function returns the user's ID.
 	* @return the name
@@ -45,6 +47,7 @@ public abstract class Account {
 	public String getName() {
 		return name;
 	}
+
 	/** 
 	* This function returns the user's ID.
 	* @return the type
@@ -53,14 +56,6 @@ public abstract class Account {
 		return type;
 	}
 
-	/** 
-	* This function set's the user's ID.
-	* @param userId the userId to set
-	*/
-	public void setUserId(int userId) {
-		this.id = userId;
-	}
-	
 	/**
 	* This function returns the number of documents borrowed.
 	* @return the numDocsBorrowed

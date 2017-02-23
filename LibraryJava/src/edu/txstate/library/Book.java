@@ -1,22 +1,44 @@
 package edu.txstate.library;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class represents a book in the library.
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class Book extends Document {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
+
 	private boolean isReserved;
+	private String isbn;
+	private int numCopies;
+	
+	Book(String title, String publisher, String publicationDate, String isbn, int numCopies, String authorString, boolean isReserved){
+		this.title = title;
+		this.publisher = publisher;
+		this.publicationDate = publicationDate;
+		this.isbn = isbn;
+		this.numCopies = numCopies;
+		this.isReserved = isReserved;
+		
+		// If there are multiple authors
+		if (authorString.contains(",")){
+			String[] words = authorString.split(",");
+			for (int i = 0; i < words.length; i++) {
+				this.authors.add(new Author(words[i]));
+			}
+		} else {
+			// If only a single author
+			this.authors.add(new Author(authorString));
+		}
+	}
+	
+	Book(){
+		this.isReserved = false;
+		this.isbn = "";
+		this.numCopies = 0;
+		
+	}
 
 	/** 
 	* @return the isReserved
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public boolean isReserved() {
 		// begin-user-code
@@ -35,19 +57,11 @@ public class Book extends Document {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private int isbnNumber;
-
-	/** 
 	* @return the isbnNumber
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public int getIsbnNumber() {
+	public String getIsbnNumber() {
 		// begin-user-code
-		return isbnNumber;
+		return isbn;
 		// end-user-code
 	}
 
@@ -55,18 +69,11 @@ public class Book extends Document {
 	* @param isbnNumber the isbnNumber to set
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public void setIsbnNumber(int isbnNumber) {
+	public void setIsbnNumber(String isbnNumber) {
 		// begin-user-code
-		this.isbnNumber = isbnNumber;
+		this.isbn = isbnNumber;
 		// end-user-code
 	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private int numCopies;
 
 	/** 
 	* @return the numCopies
@@ -85,33 +92,6 @@ public class Book extends Document {
 	public void setNumCopies(int numCopies) {
 		// begin-user-code
 		this.numCopies = numCopies;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private BookLoan bookLoan;
-
-	/** 
-	* @return the bookLoan
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public BookLoan getBookLoan() {
-		// begin-user-code
-		return bookLoan;
-		// end-user-code
-	}
-
-	/** 
-	* @param bookLoan the bookLoan to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setBookLoan(BookLoan bookLoan) {
-		// begin-user-code
-		this.bookLoan = bookLoan;
 		// end-user-code
 	}
 }

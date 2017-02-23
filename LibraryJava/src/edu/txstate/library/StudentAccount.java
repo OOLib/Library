@@ -19,14 +19,13 @@ public class StudentAccount extends Account {
 		this.name = name;
 		this.type = type;
 	}
-	
+
 	StudentAccount() {
 		this.id = 0;
 		this.name = "";
 		this.type = "STUDENT";
 	}
-	
-	
+
 	/** 
 	* @return the loan
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
