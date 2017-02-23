@@ -15,26 +15,42 @@ public abstract class Account {
 	protected Set<Loan> loans;
 	
 	/** 
-	* This function returns the user's ID.
+	* This is a constructor function.
 	*/
 	Account(int id, String name, String type) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
 	}
-	
+	/** 
+	* This is a constructor function.
+	*/	
 	Account() {
 		this.id = 0;
 		this.name = "";
-		this.type = "student";
+		this.type = "";
 	}
 	
 	/** 
 	* This function returns the user's ID.
-	* @return the userId
+	* @return the id
 	*/
-	public int getUserId() {
+	public int getId() {
 		return id;
+	}
+	/** 
+	* This function returns the user's ID.
+	* @return the name
+	*/
+	public String getName() {
+		return name;
+	}
+	/** 
+	* This function returns the user's ID.
+	* @return the type
+	*/
+	public String getType() {
+		return type;
 	}
 
 	/** 

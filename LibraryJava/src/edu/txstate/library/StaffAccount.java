@@ -18,7 +18,22 @@ public class StaffAccount extends Account {
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	private Set<Loan> loan;
-
+	/** 
+	* This is a constructor function.
+	*/
+	StaffAccount(int id, String name, String type) {
+		this.id = id;
+		this.name = name;
+		this.type = type;
+	}
+	/** 
+	* This is a constructor function.
+	*/	
+	StaffAccount() {
+		this.id = 0;
+		this.name = "";
+		this.type = "STAFF";
+	}
 	/** 
 	* @return the loan
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"

@@ -23,7 +23,7 @@ public class StudentAccount extends Account {
 	StudentAccount() {
 		this.id = 0;
 		this.name = "";
-		this.type = "student";
+		this.type = "STUDENT";
 	}
 	
 	

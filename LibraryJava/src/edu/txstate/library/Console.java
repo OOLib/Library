@@ -22,6 +22,8 @@ public class Console {
 		}
 		//-------------------------------------------------------------------------
 		// TODO Initialize library system from files
+		//-------------------------------------------------------------------------
+		
 		// Initialize User Accounts
         Scanner inFile = null;
         
@@ -33,36 +35,42 @@ public class Console {
 		}
 		
         //Read from files
-		StudentAccount account = null;
-		Set<Account> accounts = null;
+		Set<Account> accounts = new HashSet<Account>();
 		while(inFile.hasNext()){
 	        String line = inFile.nextLine();
+	        //TEST
 	        System.out.println(line);
 	        String[] words = line.split("\t");
 	        
-	        int id = Integer.parseInt(words[0]);
-	        String name = words[1];
-	        String type = words[2];
-	        
 	        // Add Student Accounts
-	        if (type.equals("Student")) {
-	        	account = new StudentAccount(id, name, type);
+	        if (words[2].toUpperCase().equals("STUDENT")) {
+	        	accounts.add(new StudentAccount(Integer.parseInt(words[0]), words[1], words[2]));
 	        }
-	        accounts = new HashSet<Account>();
-	        accounts.add(account);
-	        
-	        // TEST
 	        // Add Faculty Accounts
+	        if (words[2].toUpperCase().equals("FACULTY")) {
+	        	accounts.add(new FacultyAccount(Integer.parseInt(words[0]), words[1], words[2]));
+	        }
 	        // Add Staff Accounts
-	        
+	        if (words[2].toUpperCase().equals("STAFF")) {
+	        	accounts.add(new StaffAccount(Integer.parseInt(words[0]), words[1], words[2]));
+	        }
+	        // Add Librarian Accounts
+	        if (words[2].toUpperCase().equals("LIBRARIAN")) {
+	        	accounts.add(new LibrarianAccount(Integer.parseInt(words[0]), words[1], words[2]));
+	        }
 		}
 		// TEST - display the set
-		System.out.println(accounts);
+		for (Account account : accounts) {
+			System.out.println(account.getId() + "\t" + account.getName() + "\t" + account.getType());
+		}
         inFile.close(); //Close file
 		
 		// Initialize Books
-		
+        
 		// Initialize Journals
+        
+        //-------------------------------------------------------------------------
+        // Initialization finished
         //-------------------------------------------------------------------------
 		
 		// Menu display
