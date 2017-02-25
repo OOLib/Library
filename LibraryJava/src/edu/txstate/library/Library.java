@@ -265,23 +265,45 @@ public class Library {
 	* This function adds a new document to the library system.
 	*/
 	public void addNewDocument() {
-		
+		// TODO Figure out Null Pointer Exception
 		Scanner scan = new Scanner(System.in);
-		int choice;
+		
 		System.out.println("Select the Type of document to add");
 		System.out.println("1. Add a book");
 		System.out.println("2. Add an article");
 		System.out.println("3. Add a journal");
 		System.out.println("4. Add a conference proceeding");
 		
-		choice = scan.nextInt();
+		int choice = 0;
+		
+		try{
+			choice = Integer.parseInt(scan.nextLine());
+		}catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
 		
 		switch(choice)
 		{
 		case 1:
-			System.out.println("Enter the book information");
-			String bookInfo = scan.nextLine();
-			String[] bWords = bookInfo.split("\t");
+			String[] bWords = new String[6];
+			System.out.println("Enter the book Title: ");
+			bWords[0] = scan.nextLine();
+			
+			System.out.println("Enter the publisher: ");
+			bWords[1] = scan.nextLine();
+			
+			System.out.println("Enter the date of publication: ");
+			bWords[2] = scan.nextLine();
+			
+			System.out.println("Enter the ISBN: ");
+			bWords[3] = scan.nextLine();
+			
+			System.out.println("Enter the number of copies: ");
+			bWords[4] = scan.nextLine();
+			
+			System.out.println("Enter the author. For a List of authors, seperate by a comma: ");
+			bWords[5] = scan.nextLine();
+						
 			documents.add(new Book(bWords[0], bWords[1], bWords[2], bWords[3], Integer.parseInt(bWords[4]), bWords[5], false));
 			break;
 			
@@ -289,10 +311,26 @@ public class Library {
 			break;
 			
 		case 3:
-			System.out.println("Enter the journal infornation");
-			String journalInfo = scan.nextLine();
-			String[] jWords = journalInfo.split("\t");
-			documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[3]), Integer.parseInt(jWords[4]), jWords[5], jWords[6]));
+			String[] jWords = new String[6];
+			System.out.println("Enter the journal title: ");
+			jWords[0] = scan.nextLine();
+			
+			System.out.println("Enter the date of publication: ");
+			jWords[1] = scan.nextLine();
+			
+			System.out.println("Enter the volume number: ");
+			jWords[2] = scan.nextLine();
+			
+			System.out.println("Enter the issue number: ");
+			jWords[3] = scan.nextLine();
+			
+			System.out.println("Enter the Publisher: ");
+			jWords[4] = scan.nextLine();
+			
+			System.out.println("Enter the articles, seperated by a comma: ");
+			jWords[5] = scan.nextLine();
+			
+			documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[2]), Integer.parseInt(jWords[3]), jWords[4], jWords[5]));
 			break;
 			
 		case 4:
