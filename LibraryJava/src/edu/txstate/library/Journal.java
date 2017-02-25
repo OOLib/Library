@@ -13,7 +13,30 @@ public class Journal extends Document {
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	private int volume;
+	private int number;
+	private int numCopies;
+	String[] articleNames;
 	// title, date, volume, issue, publisher, articles
+	
+	Journal(String title, String publicationDate, int volume, int number, String publisher, String articles )
+	{
+		this.title = title;
+		this.publicationDate = publicationDate;
+		this.volume = volume;
+		this.number = number;
+		this.publisher = publisher;
+		
+		// TODO Replace this with a set of articles later instead of just strings
+		String[] words = articles.split(",");
+		articleNames = new String[words.length];
+		
+		for(int i = 0; i < words.length; i++)
+		{
+		articleNames[i] = words[i];
+		}
+		
+		
+	}
 
 	/** 
 	* @return the volume
@@ -40,7 +63,7 @@ public class Journal extends Document {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	private int number;
+	
 
 	/** 
 	* @return the number
@@ -67,7 +90,7 @@ public class Journal extends Document {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	private int numCopies;
+	
 
 	/** 
 	* @return the numCopies

@@ -90,6 +90,8 @@ public class Library {
 			System.out.println(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getPublicationDate());
 		}
 		inFile.close();
+		
+		Set<Document> documents = new HashSet<Document>();
 
 		// Initialize Journals
 		// title, date, volume, issue, publisher, articles
@@ -263,8 +265,46 @@ public class Library {
 	* This function adds a new document to the library system.
 	*/
 	public void addNewDocument() {
-		// TODO Auto-generated method stub
-
+		
+		Scanner scan = new Scanner(System.in);
+		int choice;
+		System.out.println("Select the Type of document to add");
+		System.out.println("1. Add a book");
+		System.out.println("2. Add an article");
+		System.out.println("3. Add a journal");
+		System.out.println("4. Add a conference proceeding");
+		
+		choice = scan.nextInt();
+		
+		switch(choice)
+		{
+		case 1:
+			System.out.println("Enter the book information");
+			String bookInfo = scan.nextLine();
+			String[] bWords = bookInfo.split("\t");
+			documents.add(new Book(bWords[0], bWords[1], bWords[2], bWords[3], Integer.parseInt(bWords[4]), bWords[5], false));
+			break;
+			
+		case 2:
+			break;
+			
+		case 3:
+			System.out.println("Enter the journal infornation");
+			String journalInfo = scan.nextLine();
+			String[] jWords = journalInfo.split("\t");
+			documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[3]), Integer.parseInt(jWords[4]), jWords[5], jWords[6]));
+			break;
+			
+		case 4:
+			break;
+			
+		default: 
+			System.out.println("Not a valid document type selection. Aborting Entry");
+			break;
+			
+		}
+		scan.close();
+		
 	}
 
 	/** 
