@@ -10,26 +10,6 @@ public class Console {
 
 	private static Library library = null;
 
-	/** 
-	* @return the library
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public static Library getLibrary() {
-		// begin-user-code
-		return library;
-		// end-user-code
-	}
-
-	/** 
-	* @param library the library to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public static void setLibrary(Library library) {
-		// begin-user-code
-		Console.library = library;
-		// end-user-code
-	}
-
 	public static void main(String args[]) {
 		Scanner in = new Scanner(System.in);
 		// Ensure singleton library is created

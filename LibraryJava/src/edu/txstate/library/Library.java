@@ -19,7 +19,7 @@ public class Library {
 	
 	Library() {
 		//-------------------------------------------------------------------------
-		// TODO Initialize library system from files
+		// Read library data from files
 		//-------------------------------------------------------------------------
 		
 		//Initialize directories
@@ -28,16 +28,34 @@ public class Library {
 		
 		// I/O
 		Scanner inFile = null;
-
+		Scanner bookFile = null;
+		
+		// Set file readers for output/saved data documents
+		// to see if they are empty
+		// if the data file is empty the library needs to be initialized with pre-defined data
+		try {
+			bookFile = new Scanner(new FileReader("res/book-data.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//-------------------------
+		// Read from user file
+		//-------------------------
 		// Initialize User Accounts
 		try {
-			inFile = new Scanner(new FileReader("res/users.txt"));
+			// If the user has not used the system before, then initialize with some pre-defined data
+			if (!(bookFile.hasNext())){
+				inFile = new Scanner(new FileReader("res/user-initial.txt"));
+			} else {
+				inFile = new Scanner(new FileReader("res/user-data.txt"));
+			}
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-		// Read from files
 		// int id, String name, String type
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
@@ -67,9 +85,16 @@ public class Library {
 		}*/
 		inFile.close(); //Close file
 
-		// Initialize Books
+		//-------------------------
+		// Read from book file
+		//-------------------------
 		try {
-			inFile = new Scanner(new FileReader("res/books.txt"));
+			// If the user has not used the system before, then initialize with some pre-defined data
+			if (!(bookFile.hasNext())){
+				inFile = new Scanner(new FileReader("res/book-initial.txt"));
+			} else {
+				inFile = new Scanner(new FileReader("res/book-data.txt"));
+			}
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -94,10 +119,17 @@ public class Library {
 		}*/
 		inFile.close();
 
-		// Initialize Journals
+		//-------------------------
+		// Read from journal file
+		//-------------------------
 		// String title, date, volume, issue, publisher, articles, (for each article, in order) (article)firstpage, (article)lastpage
 		try {
-			inFile = new Scanner(new FileReader("res/journals.txt"));
+			// If the user has not used the system before, then initialize with some pre-defined data
+			if (!(bookFile.hasNext())){
+				inFile = new Scanner(new FileReader("res/journal-initial.txt"));
+			} else {
+				inFile = new Scanner(new FileReader("res/journal-data.txt"));
+			}
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -119,25 +151,18 @@ public class Library {
 				Journal journal = (Journal) document;
 				System.out.println(journal.getTitle() + "\t" + journal.getVolume());
 			}
-		*/
+		}*/
+		
+		inFile.close();
+		bookFile.close();
 
 		//-------------------------------------------------------------------------
-		// Initialization finished
+		// Data reading finished
 		//-------------------------------------------------------------------------
 		
 	}
 
-	/** 
-	* @return the accounts
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public Set<Account> getAccounts() {
-		// begin-user-code
-		return accounts;
-		// end-user-code
-	}
-
-	private Console console;
+	
 
 	/**
 	* This function returns the total number of documents borrowed in the library. 
@@ -156,99 +181,14 @@ public class Library {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Account> account;
-
-	/**
-	* This function returns the set of documents borrowed.
-	* @return the docsBorrowed
-	*/
-	public Set<Document> getDocsBorrowed() {
-		return docsBorrowed;
-	}
-
-	/**
-	* This function sets the documents borrowed. 
-	* @param docsBorrowed the docsBorrowed to set
-	*/
-	public void setDocsBorrowed(Set<Document> docsBorrowed) {
-		this.docsBorrowed = docsBorrowed;
-	}
-
-	/**
-	* This function returns the set of documents. 
-	* @return the documents
-	*/
-	public Set<Document> getDocuments() {
-		return documents;
-	}
-
-	/** 
-	* This function sets the documents.
-	* @param documents the documents to set
-	*/
-	public void setDocuments(Set<Document> documents) {
-		this.documents = documents;
-	}
-
-	/** 
-	* This function sets the accounts.
-	* @param accounts the accounts to set
-	*/
-	public void setAccounts(Set<Account> accounts) {
-		this.accounts = accounts;
-	}
-
-	/**
-	* This function returns the console. 
-	* @return the console
-	*/
-	public Console getConsole() {
-		return console;
-	}
-
-	/**
-	* This function sets the console. 
-	* @param console the console to set
-	*/
-	public void setConsole(Console console) {
-		this.console = console;
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* This&nbsp;function&nbsp;sends&nbsp;an&nbsp;overdueBookReminder&nbsp;message&nbsp;to&nbsp;the&nbsp;user&nbsp;if&nbsp;they&nbsp;have&nbsp;not&nbsp;returned&nbsp;the&nbsp;document&nbsp;by&nbsp;the&nbsp;time&nbsp;the&nbsp;loan&nbsp;has&nbsp;ended.<br>@param&nbsp;account<br>@return
-	* <!-- end-UML-doc -->
+	* This function notifies a user that they have an overdue book.
 	* @param account
-	* @param Accountaccount
 	* @return
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public Object overdueBookReminder(Object account, Object Accountaccount) {
+	public void overdueBookReminder(Account account) {
 		// begin-user-code
 		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
-	}
-
-	/**
-	* This function returns the set of accounts. 
-	* @return the account
-	*/
-	public Set<Account> getAccount() {
-		return accounts;
-	}
-
-	/** 
-	* @param account the account to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setAccount(Set<Account> account) {
-		// begin-user-code
-		this.account = account;
 		// end-user-code
 	}
 
@@ -424,9 +364,7 @@ public class Library {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function allows a user to checkout a document.
 	*/
 	public void checkoutDocument() {
 		// begin-user-code
@@ -436,9 +374,7 @@ public class Library {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function searches the library for a document.
 	*/
 	public void searchLibrary() {
 		// begin-user-code
