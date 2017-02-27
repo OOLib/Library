@@ -13,6 +13,8 @@ public class StudentAccount extends Account {
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	private Set<Loan> loan;
+	private static final int MAX_BOOK_LOAN_DURATION = 6; // Duration in months
+	private static final int MAX_BORROWED_AMOUNT = 6; // maximum number of items able to be borrowed at a time
 
 	StudentAccount(int id, String name, String type) {
 		this.id = id;
@@ -45,4 +47,9 @@ public class StudentAccount extends Account {
 		this.loan = loan;
 		// end-user-code
 	}
+	
+	public int getMaxLoanDuration() {
+		return MAX_BOOK_LOAN_DURATION;
+	}
+
 }

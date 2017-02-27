@@ -266,7 +266,60 @@ public class Library {
 	* This function adds a new user to the library system.
 	*/
 	public void addNewUser() {
-		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Select the type of User to add");
+		System.out.println("1. Add a new User Account");
+		System.out.println("2. Add a new faculty Account");
+		System.out.println("3. Add a new Librarian Account");
+		
+		int choice = 0;
+		
+		try{
+			choice = Integer.parseInt(scan.nextLine());
+		}catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
+		switch(choice)
+		{
+		case 1:
+			String[] userInfo = new String[3];
+			System.out.println("Enter the user id: ");
+			userInfo[0] = scan.nextLine();
+			System.out.println("Enter the student user name: ");
+			userInfo[1] = scan.nextLine();
+			userInfo[3] = "Student";
+			accounts.add(new StudentAccount(Integer.parseInt(userInfo[0]), userInfo[1], userInfo[2]));
+			break;
+			
+		case 2:
+			String[] staffInfo = new String[3];
+			System.out.println("Enter the staff id: ");
+			staffInfo[0] = scan.nextLine();
+			System.out.println("Enter the staff user name: ");
+			staffInfo[1] = scan.nextLine();
+			staffInfo[3] = "Staff";
+			accounts.add(new StaffAccount(Integer.parseInt(staffInfo[0]), staffInfo[1], staffInfo[2]));
+			break;
+			
+		case 3:
+			String[] librarianInfo = new String[3];
+			System.out.println("Enter the Librarian id: ");
+			librarianInfo[0] = scan.nextLine();
+			System.out.println("Enter the Librarian user name: ");
+			librarianInfo[1] = scan.nextLine();
+			librarianInfo[3] = "Librarian";
+			accounts.add(new LibrarianAccount(Integer.parseInt(librarianInfo[0]), librarianInfo[1], librarianInfo[2]));
+			break;
+		
+		default:
+			System.out.println("Not a valid account selection. Aborting entry.");
+			break;
+		}
+		scan.close();
+		// TODO correct case switch depending on requirements
 
 	}
 
