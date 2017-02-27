@@ -13,7 +13,6 @@ import java.util.Set;
 public class Library {
 
 	private int numDocsBorrowed;
-	private Set<Document> document;
 	private Set<Document> docsBorrowed;
 	private Set<Document> documents;
 	private Set<Account> accounts;
@@ -22,10 +21,15 @@ public class Library {
 		//-------------------------------------------------------------------------
 		// TODO Initialize library system from files
 		//-------------------------------------------------------------------------
-
-		// Initialize User Accounts
+		
+		//Initialize directories
+		accounts = new HashSet<Account>();
+		documents = new HashSet<Document>();
+		
+		// I/O
 		Scanner inFile = null;
 
+		// Initialize User Accounts
 		try {
 			inFile = new Scanner(new FileReader("res/users.txt"));
 		} catch (FileNotFoundException e1) {
@@ -34,12 +38,9 @@ public class Library {
 		}
 
 		// Read from files
-		// id, name, type
-		Set<Account> accounts = new HashSet<Account>();
+		// int id, String name, String type
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
-			//TEST
-			System.out.println(line);
 			String[] words = line.split("\t");
 
 			// Add Student Accounts
@@ -60,14 +61,13 @@ public class Library {
 			}
 		}
 		// TEST - display the set
+		/*
 		for (Account account : accounts) {
 			System.out.println(account.getId() + "\t" + account.getName() + "\t" + account.getType());
-		}
+		}*/
 		inFile.close(); //Close file
 
 		// Initialize Books
-		inFile = null;
-
 		try {
 			inFile = new Scanner(new FileReader("res/books.txt"));
 		} catch (FileNotFoundException e1) {
@@ -76,25 +76,50 @@ public class Library {
 		}
 
 		//Read from files
-		// title, publisher, date, isbn, copies, author
-		Set<Book> books = new HashSet<Book>();
+		// String title, String publisher, String date, String isbn, int copies, String(comma delimited)author
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
 			
 			// Add book to set
-			books.add(new Book(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], false));
+			documents.add(new Book(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], false));
 		}
 		// TEST - display the set
-		for (Book book : books) {
-			System.out.println(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getPublicationDate());
-		}
+		/*
+		for (Document document : documents) {
+			if (document instanceof Book) {
+				Book book = (Book) document;
+				System.out.println(book.getTitle() + "\t" + book.getIsbn());
+			}
+		}*/
 		inFile.close();
-		
-		Set<Document> documents = new HashSet<Document>();
 
 		// Initialize Journals
-		// title, date, volume, issue, publisher, articles
+		// String title, date, volume, issue, publisher, articles, (for each article, in order) (article)firstpage, (article)lastpage
+		try {
+			inFile = new Scanner(new FileReader("res/journals.txt"));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		//Read from files
+		// String title, String publicationDate, int volume, int numberCopies, String(comma delimited)author
+		while (inFile.hasNext()) {
+			String line = inFile.nextLine();
+			String[] words = line.split("\t");
+			
+			// Add journal to set
+			documents.add(new Journal(words[0], words[1], Integer.parseInt(words[2]), Integer.parseInt(words[3]), words[4], words[5]));
+		}
+		// TEST - display the set
+		/*
+		for (Document document : documents) {
+			if (document instanceof Journal) {
+				Journal journal = (Journal) document;
+				System.out.println(journal.getTitle() + "\t" + journal.getVolume());
+			}
+		*/
 
 		//-------------------------------------------------------------------------
 		// Initialization finished
@@ -225,22 +250,6 @@ public class Library {
 		// begin-user-code
 		this.account = account;
 		// end-user-code
-	}
-
-	/**
-	* This function returns the documents. 
-	* @return the document
-	*/
-	public Set<Document> getDocument() {
-		return document;
-	}
-
-	/**
-	* This function sets the value of the document. 
-	* @param document the document to set
-	*/
-	public void setDocument(Set<Document> document) {
-		this.document = document;
 	}
 
 	/** 

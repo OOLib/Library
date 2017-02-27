@@ -59,19 +59,19 @@ public class Book extends Document {
 	/** 
 	* @return the isbnNumber
 	*/
-	public String getIsbnNumber() {
+	public String getIsbn() {
 		// begin-user-code
 		return isbn;
 		// end-user-code
 	}
 
 	/** 
-	* @param isbnNumber the isbnNumber to set
+	* @param isbn the isbnNumber to set
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public void setIsbnNumber(String isbnNumber) {
+	public void setIsbn(String isbn) {
 		// begin-user-code
-		this.isbn = isbnNumber;
+		this.isbn = isbn;
 		// end-user-code
 	}
 

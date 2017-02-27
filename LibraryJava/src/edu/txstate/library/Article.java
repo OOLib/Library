@@ -6,10 +6,28 @@ package edu.txstate.library;
  */
 public class Article {
 
+	private String title;
 	private int firstPage;
 	private int lastPage;
-	private Journal journal;
-	private ConferenceProceeding conferenceProceeding;
+	
+	Article(String title, int firstPage, int lastPage) {
+		this.title = title;
+		this.firstPage = firstPage;
+		this.lastPage = lastPage;
+	}
+	
+	Article(String title) {
+		this.title = title;
+		this.firstPage = 0;
+		this.lastPage = 0;
+	}
+	
+	public String getTitle(){
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	/** 
 	* This function returns the first page number of the article.
@@ -41,37 +59,5 @@ public class Article {
 	*/
 	public void setLastPage(int lastPage) {
 		this.lastPage = lastPage;
-	}
-
-	/** 
-	* This function returns the journal. 
-	* @return the journal
-	*/
-	public Journal getJournal() {
-		return journal;
-	}
-
-	/** 
-	* This function sets the journal
-	* @param journal the journal to set
-	*/
-	public void setJournal(Journal journal) {
-		this.journal = journal;
-	}
-
-	/**
-	* This function returns the conference proceeding object. 
-	* @return the conferenceProceeding
-	*/
-	public ConferenceProceeding getConferenceProceeding() {
-		return conferenceProceeding;
-	}
-
-	/**
-	* This function sets the conferenceproceeding set.  
-	* @param conferenceProceeding the conferenceProceeding to set
-	*/
-	public void setConferenceProceeding(ConferenceProceeding conferenceProceeding) {
-		this.conferenceProceeding = conferenceProceeding;
 	}
 }

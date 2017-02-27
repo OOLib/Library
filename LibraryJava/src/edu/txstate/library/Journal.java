@@ -1,5 +1,6 @@
 package edu.txstate.library;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /** 
@@ -7,34 +8,37 @@ import java.util.Set;
  * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class Journal extends Document {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
+
 	private int volume;
 	private int number;
 	private int numCopies;
-	String[] articleNames;
+	private Set<Article> articles;
+	
 	// title, date, volume, issue, publisher, articles
 	
-	Journal(String title, String publicationDate, int volume, int number, String publisher, String articles )
+	Journal(String title, String publicationDate, int volume, int number, String publisher, String articleString )
 	{
 		this.title = title;
 		this.publicationDate = publicationDate;
 		this.volume = volume;
 		this.number = number;
 		this.publisher = publisher;
-		
-		// TODO Replace this with a set of articles later instead of just strings
-		String[] words = articles.split(",");
-		articleNames = new String[words.length];
-		
-		for(int i = 0; i < words.length; i++)
-		{
-		articleNames[i] = words[i];
+		this.articles = new HashSet<Article>();
+
+		// If there are multiple articles
+		if (articleString.contains(",")){
+			String[] words = articleString.split(",");
+			for (int i = 0; i < words.length; i++) {
+				// split each article into individual attributes: title, firstpage, lastpage
+				String[] articleAttributes = words[i].split("[.]");
+				this.articles.add(new Article(articleAttributes[0],Integer.parseInt(articleAttributes[1]),Integer.parseInt(articleAttributes[2])));
+			}
+		} else {
+			// If only a single article
+			String[] articleAttributes = articleString.split("[.]");
+			// title, firstpage, lastpage
+			this.articles.add(new Article(articleAttributes[0],Integer.parseInt(articleAttributes[1]),Integer.parseInt(articleAttributes[2])));
 		}
-		
 		
 	}
 
@@ -59,13 +63,6 @@ public class Journal extends Document {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	
-
-	/** 
 	* @return the number
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
@@ -86,13 +83,6 @@ public class Journal extends Document {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	
-
-	/** 
 	* @return the numCopies
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
@@ -111,34 +101,7 @@ public class Journal extends Document {
 		this.numCopies = numCopies;
 		// end-user-code
 	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Article> article;
-
-	/** 
-	* @return the article
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public Set<Article> getArticle() {
-		// begin-user-code
-		return article;
-		// end-user-code
-	}
-
-	/** 
-	* @param article the article to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setArticle(Set<Article> article) {
-		// begin-user-code
-		this.article = article;
-		// end-user-code
-	}
-
+	
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
@@ -165,14 +128,7 @@ public class Journal extends Document {
 		this.journalLoan = journalLoan;
 		// end-user-code
 	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Article> articles;
-
+	
 	/** 
 	* @return the articles
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
