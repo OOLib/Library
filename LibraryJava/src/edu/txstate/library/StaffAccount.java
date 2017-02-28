@@ -1,23 +1,14 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 import java.util.Set;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class represents a staff account.
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class StaffAccount extends Account {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Loan> loan;
+
+	private Set<Loan> loans;
 
 	/** 
 	* This is a constructor function.
@@ -29,31 +20,11 @@ public class StaffAccount extends Account {
 	}
 
 	/** 
-	* This is a constructor function.
+	* This is a default constructor function.
 	*/
 	StaffAccount() {
 		this.id = 0;
 		this.name = "";
 		this.type = "STAFF";
-	}
-
-	/** 
-	* @return the loan
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public Set<Loan> getLoan() {
-		// begin-user-code
-		return loan;
-		// end-user-code
-	}
-
-	/** 
-	* @param loan the loan to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setLoan(Set<Loan> loan) {
-		// begin-user-code
-		this.loan = loan;
-		// end-user-code
 	}
 }

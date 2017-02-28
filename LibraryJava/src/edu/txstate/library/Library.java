@@ -13,7 +13,7 @@ import java.util.Set;
 public class Library {
 
 	private int numDocsBorrowed;
-	private Set<Document> docsBorrowed;
+	private Set<Document> loans;
 	private Set<Document> documents;
 	private Set<Account> accounts;
 	

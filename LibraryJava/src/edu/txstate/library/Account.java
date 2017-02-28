@@ -1,5 +1,6 @@
 package edu.txstate.library;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /** 
@@ -21,15 +22,19 @@ public abstract class Account {
 		this.id = id;
 		this.name = name;
 		this.type = type;
+		this.numDocsBorrowed = 0;
+		this.loans = new HashSet<Loan>();
 	}
 
 	/** 
-	* This is a constructor function.
+	* This is a default constructor function.
 	*/
 	Account() {
 		this.id = 0;
 		this.name = "";
 		this.type = "";
+		this.numDocsBorrowed = 0;
+		this.loans = new HashSet<Loan>();
 	}
 
 	/** 

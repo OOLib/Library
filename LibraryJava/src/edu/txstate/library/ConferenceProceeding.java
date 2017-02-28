@@ -7,13 +7,33 @@ import java.util.Set;
  * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class ConferenceProceeding extends Document {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private int numCopies;
 
+	private int numCopies;
+	private Set<Article> articles;
+	private ConferenceProceedingLoan conferenceProceedingLoan;
+	private String conferenceLocation;
+	private String conferenceDate;
+
+	/** 
+	* This is a constructor function.
+	*/
+	ConferenceProceeding(int numCopies, Set<Article> articles, ConferenceProceedingLoan conferenceProceedingLoan, String conferenceLocation, String conferenceDate) {
+		this.numCopies = numCopies;
+		this.articles = articles;
+		this.conferenceProceedingLoan = conferenceProceedingLoan;
+		this.conferenceLocation = conferenceLocation;
+		this.conferenceDate = conferenceDate;
+	}
+	/**
+	* This is a default constructor function.
+	*/	
+	ConferenceProceeding() {
+		this.numCopies = 0;
+		this.articles = null;
+		this.conferenceProceedingLoan = null;
+		this.conferenceLocation = "";
+		this.conferenceDate = "";
+	}
 	/** 
 	* @return the numCopies
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
@@ -33,14 +53,7 @@ public class ConferenceProceeding extends Document {
 		this.numCopies = numCopies;
 		// end-user-code
 	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private String conferenceLocation;
-
+	
 	/** 
 	* @return the conferenceLocation
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
@@ -60,14 +73,7 @@ public class ConferenceProceeding extends Document {
 		this.conferenceLocation = conferenceLocation;
 		// end-user-code
 	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private String conferenceDate;
-
+	
 	/** 
 	* @return the conferenceDate
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
@@ -89,40 +95,6 @@ public class ConferenceProceeding extends Document {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Article> article;
-
-	/** 
-	* @return the article
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public Set<Article> getArticle() {
-		// begin-user-code
-		return article;
-		// end-user-code
-	}
-
-	/** 
-	* @param article the article to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setArticle(Set<Article> article) {
-		// begin-user-code
-		this.article = article;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private ConferenceProceedingLoan conferenceProceedingLoan;
-
-	/** 
 	* @return the conferenceProceedingLoan
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
@@ -139,33 +111,6 @@ public class ConferenceProceeding extends Document {
 	public void setConferenceProceedingLoan(ConferenceProceedingLoan conferenceProceedingLoan) {
 		// begin-user-code
 		this.conferenceProceedingLoan = conferenceProceedingLoan;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Article> articles;
-
-	/** 
-	* @return the articles
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public Set<Article> getArticles() {
-		// begin-user-code
-		return articles;
-		// end-user-code
-	}
-
-	/** 
-	* @param articles the articles to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setArticles(Set<Article> articles) {
-		// begin-user-code
-		this.articles = articles;
 		// end-user-code
 	}
 }

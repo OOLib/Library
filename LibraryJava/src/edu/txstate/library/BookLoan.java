@@ -1,21 +1,26 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class represents a book loan.
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class BookLoan extends Loan {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
+
 	private Book book;
+	
+	/** 
+	* This is a constructor function.
+	*/
+	BookLoan(Book book) {
+		this.book = book;
+	}
+	
+	/** 
+	* This is a default constructor function.
+	*/
+	BookLoan() {
+		this.book = null;
+	}
 
 	/** 
 	* @return the book

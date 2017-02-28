@@ -10,14 +10,19 @@ public class Article {
 	private int firstPage;
 	private int lastPage;
 	
+	/** 
+	* This is a constructor function.
+	*/
 	Article(String title, int firstPage, int lastPage) {
 		this.title = title;
 		this.firstPage = firstPage;
 		this.lastPage = lastPage;
 	}
-	
-	Article(String title) {
-		this.title = title;
+	/** 
+	* This is a default constructor function.
+	*/
+	Article() {
+		this.title = "";
 		this.firstPage = 0;
 		this.lastPage = 0;
 	}

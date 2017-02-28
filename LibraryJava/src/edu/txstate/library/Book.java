@@ -10,6 +10,9 @@ public class Book extends Document {
 	private String isbn;
 	private int numCopies;
 	
+	/** 
+	* This is a constructor function.
+	*/
 	Book(String title, String publisher, String publicationDate, String isbn, int numCopies, String authorString, boolean isReserved){
 		this.title = title;
 		this.publisher = publisher;
@@ -30,6 +33,9 @@ public class Book extends Document {
 		}
 	}
 	
+	/** 
+	* This is a defualt constructor function.
+	*/
 	Book(){
 		this.isReserved = false;
 		this.isbn = "";

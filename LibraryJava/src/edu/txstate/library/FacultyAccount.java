@@ -1,23 +1,14 @@
-/**
- * 
- */
 package edu.txstate.library;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class represents a faculty account
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class FacultyAccount extends Account {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Set<Loan> loan;
+
 	private static final int MAX_BOOK_LOAN_DURATION = 12; // Duration in months
 	private static final int MAX_BORROWED_AMOUNT = 12; // maximum number of items able to be borrowed at a time
 
@@ -27,7 +18,9 @@ public class FacultyAccount extends Account {
 	FacultyAccount(int id, String name, String type) {
 		this.id = id;
 		this.name = name;
+		// TODO remove type from constructor, always FACULTY type
 		this.type = type;
+		this.loans = new HashSet<Loan>();
 	}
 
 	/** 
@@ -45,7 +38,7 @@ public class FacultyAccount extends Account {
 	*/
 	public Set<Loan> getLoan() {
 		// begin-user-code
-		return loan;
+		return loans;
 		// end-user-code
 	}
 
@@ -55,7 +48,7 @@ public class FacultyAccount extends Account {
 	*/
 	public void setLoan(Set<Loan> loan) {
 		// begin-user-code
-		this.loan = loan;
+		this.loans = loan;
 		// end-user-code
 	}
 	

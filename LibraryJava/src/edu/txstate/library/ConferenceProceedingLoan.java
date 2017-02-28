@@ -1,23 +1,32 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
+ * This class represents a conference proceeding loan.
+ * @author Hannah Burzynski, Alexander Wagstaff
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
 public class ConferenceProceedingLoan extends Loan {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private ConferenceProceeding conferenceProceeding;
 
+	private ConferenceProceeding conferenceProceeding;
+	
 	/** 
+	* This is a constructor function.
+	*/
+	ConferenceProceedingLoan(ConferenceProceeding conferenceProceeding) {
+		this.conferenceProceeding = conferenceProceeding;
+		
+	}
+	
+	/** 
+	* This is a default constructor function.
+	*/
+	ConferenceProceedingLoan() {
+		this.conferenceProceeding = null;
+	}
+	
+
+	/**
+	* This function returns a conference proceeding.
 	* @return the conferenceProceeding
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
@@ -27,7 +36,8 @@ public class ConferenceProceedingLoan extends Loan {
 		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function sets a conference proceeding. 
 	* @param conferenceProceeding the conferenceProceeding to set
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/

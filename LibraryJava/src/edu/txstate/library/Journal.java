@@ -10,7 +10,8 @@ import java.util.Set;
 public class Journal extends Document {
 
 	private int volume;
-	private int number;
+	// issue number
+	private int issueNumber;
 	private int numCopies;
 	private Set<Article> articles;
 	
@@ -21,7 +22,7 @@ public class Journal extends Document {
 		this.title = title;
 		this.publicationDate = publicationDate;
 		this.volume = volume;
-		this.number = number;
+		this.issueNumber = number;
 		this.publisher = publisher;
 		this.articles = new HashSet<Article>();
 
@@ -66,9 +67,9 @@ public class Journal extends Document {
 	* @return the number
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public int getNumber() {
+	public int getIssueNumber() {
 		// begin-user-code
-		return number;
+		return issueNumber;
 		// end-user-code
 	}
 
@@ -76,9 +77,9 @@ public class Journal extends Document {
 	* @param number the number to set
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public void setNumber(int number) {
+	public void setIssueNumber(int number) {
 		// begin-user-code
-		this.number = number;
+		this.issueNumber = number;
 		// end-user-code
 	}
 

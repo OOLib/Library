@@ -10,19 +10,22 @@ import java.util.Set;
 public abstract class Document {
 	
 	protected String title;
-
 	protected Set<Author> authors;
 	protected String publisher;
 	protected String publicationDate;
 
-	
+	/** 
+	* This is a constructor function.
+	*/
 	Document(String title, Set<Author> authors, String publisher, String publicationDate) {
 		this.title = title;
 		this.authors = authors;
 		this.publisher = publisher;
 		this.publicationDate = publicationDate;
 	}
-	
+	/** 
+	* This is a default constructor function.
+	*/
 	Document() {
 		this.title = "";
 		this.authors = new HashSet<Author>();
