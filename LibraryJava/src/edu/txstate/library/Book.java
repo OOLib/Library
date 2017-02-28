@@ -34,7 +34,7 @@ public class Book extends Document {
 	}
 	
 	/** 
-	* This is a defualt constructor function.
+	* This is a default constructor function.
 	*/
 	Book(){
 		this.isReserved = false;

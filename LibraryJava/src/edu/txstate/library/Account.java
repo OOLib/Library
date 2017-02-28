@@ -16,17 +16,6 @@ public abstract class Account {
 	protected Set<Loan> loans;
 
 	/** 
-	* This is a constructor function.
-	*/
-	Account(int id, String name, String type) {
-		this.id = id;
-		this.name = name;
-		this.type = type;
-		this.numDocsBorrowed = 0;
-		this.loans = new HashSet<Loan>();
-	}
-
-	/** 
 	* This is a default constructor function.
 	*/
 	Account() {

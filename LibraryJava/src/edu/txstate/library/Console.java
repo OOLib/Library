@@ -57,6 +57,6 @@ public class Console {
 		}
 		// Close scanner input stream
 		in.close();
-		System.out.println("Program Terminated");
+		System.out.println("Thanks for using the Library system.");
 	}
 }

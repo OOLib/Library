@@ -14,18 +14,8 @@ public abstract class Loan {
 	private Set<Document> documents;
 	private int duration;
 	
-	
 	/** 
-	* This is a constructor function.
-	*/
-	Loan(Set<Account> accounts, Set<Document> documents, int duration) {
-		this.accounts = accounts;
-		this.documents = documents;
-		this.duration = duration;
-	}
-	
-	/** 
-	* This is a constructor function.
+	* This is a default constructor function.
 	*/
 	Loan() {
 		this.accounts = new HashSet<Account>();

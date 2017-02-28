@@ -14,15 +14,7 @@ public abstract class Document {
 	protected String publisher;
 	protected String publicationDate;
 
-	/** 
-	* This is a constructor function.
-	*/
-	Document(String title, Set<Author> authors, String publisher, String publicationDate) {
-		this.title = title;
-		this.authors = authors;
-		this.publisher = publisher;
-		this.publicationDate = publicationDate;
-	}
+	
 	/** 
 	* This is a default constructor function.
 	*/

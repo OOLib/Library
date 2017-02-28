@@ -2,6 +2,7 @@ package edu.txstate.library;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -13,7 +14,7 @@ import java.util.Set;
 public class Library {
 
 	private int numDocsBorrowed;
-	private Set<Document> loans;
+	private Set<Loan> loans;
 	private Set<Document> documents;
 	private Set<Account> accounts;
 	
@@ -136,7 +137,6 @@ public class Library {
 		}
 
 		//Read from files
-		// String title, String publicationDate, int volume, int numberCopies, String(comma delimited)author
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
@@ -184,7 +184,6 @@ public class Library {
 	* This function notifies a user that they have an overdue book.
 	* @param account
 	* @return
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void overdueBookReminder(Account account) {
 		// begin-user-code
@@ -195,11 +194,9 @@ public class Library {
 	/** 
 	* This function sends an overdueBookReminder message to the user if they have not returned the document by the time the loan has ended.
 	* @param account
-	* @return
 	*/
-	public Object overdueBookReminder(Object account) {
+	public void overdueBookReminder(Object account) {
 		// TODO Auto-generated method stub
-		return null;
 	}
 
 	/** 
@@ -404,6 +401,61 @@ public class Library {
 	*/
 	public void save() {
 		// TODO Auto-generated method stub
+		
+		PrintWriter outFile = null;
+		
+		//-------------------------
+		// Write to book file
+		//-------------------------
+		
+		try {
+			outFile = new PrintWriter("res/book-data.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+		for (Document document : documents) {
+			if (document instanceof Book) {
+				Book book = (Book) document;
+				outFile.println(book.getTitle() + "\t" + book.getIsbn());
+			}
+		}
+		outFile.close();
+		
+		//-------------------------
+		// Write to journal file
+		//-------------------------
+		// String title, date, volume, issue, publisher, articles(template: title.firstPage.LastPage, articles comma-delimited, attributes period-delimited)
+		try {
+			outFile = new PrintWriter("res/journal-data.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (Document document : documents) {
+			if (document instanceof Journal) {
+				Journal journal = (Journal) document;
+				outFile.println(journal.getTitle() + "\t" + journal.getVolume());
+			}
+		}
+		outFile.close();
+		
+		//-------------------------
+		// Write to user file
+		//-------------------------
+		
+		try {
+			outFile = new PrintWriter("res/user-data.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (Account account : accounts) {
+			outFile.println(account.getId() + "\t" + account.getName() + "\t" + account.getType());
+		}
+		outFile.close();
 	}
 }

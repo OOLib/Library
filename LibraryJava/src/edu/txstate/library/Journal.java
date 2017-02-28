@@ -15,7 +15,6 @@ public class Journal extends Document {
 	private int numCopies;
 	private Set<Article> articles;
 	private JournalLoan journalLoans;
-	private Set<Author> authors;
 	
 	// title, date, volume, issue, publisher, articles
 	/** 
