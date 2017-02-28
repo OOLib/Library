@@ -44,7 +44,7 @@ public class Library {
 		//-------------------------
 		// Read from user file
 		//-------------------------
-		// Initialize User Accounts
+		// int id, String name, String type
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -57,7 +57,6 @@ public class Library {
 			e1.printStackTrace();
 		}
 
-		// int id, String name, String type
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
@@ -89,6 +88,8 @@ public class Library {
 		//-------------------------
 		// Read from book file
 		//-------------------------
+		// String title, String publisher, String date, String isbn, int copies, String(comma delimited)author
+		
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -102,7 +103,6 @@ public class Library {
 		}
 
 		//Read from files
-		// String title, String publisher, String date, String isbn, int copies, String(comma delimited)author
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
@@ -400,6 +400,9 @@ public class Library {
 	* This function saves the state of the library and exits the system.
 	*/
 	public void save() {
+		
+		/*
+
 		// TODO Auto-generated method stub
 		
 		PrintWriter outFile = null;
@@ -407,6 +410,7 @@ public class Library {
 		//-------------------------
 		// Write to book file
 		//-------------------------
+		// String title, String publisher, String date, String isbn, int copies, String(comma delimited)author
 		
 		try {
 			outFile = new PrintWriter("res/book-data.txt");
@@ -418,7 +422,20 @@ public class Library {
 		for (Document document : documents) {
 			if (document instanceof Book) {
 				Book book = (Book) document;
-				outFile.println(book.getTitle() + "\t" + book.getIsbn());
+				outFile.print(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getIsbn() + "\t" + book.getNumCopies());
+			
+				String authorString = "";
+				for (Author author : book.authors) {
+					authorString.concat(author.getName());
+					authorString.concat(",");
+				}
+				//remove last comma
+				System.out.print(authorString);
+				//System.out.println(authorString.length());
+				//authorString = authorString.substring(0, authorString.length()-1);
+				//add newline
+				//authorString.concat("\n");
+				
 			}
 		}
 		outFile.close();
@@ -427,6 +444,7 @@ public class Library {
 		// Write to journal file
 		//-------------------------
 		// String title, date, volume, issue, publisher, articles(template: title.firstPage.LastPage, articles comma-delimited, attributes period-delimited)
+		
 		try {
 			outFile = new PrintWriter("res/journal-data.txt");
 		} catch (FileNotFoundException e) {
@@ -445,6 +463,7 @@ public class Library {
 		//-------------------------
 		// Write to user file
 		//-------------------------
+		// int id, String name, String type
 		
 		try {
 			outFile = new PrintWriter("res/user-data.txt");
@@ -457,5 +476,8 @@ public class Library {
 			outFile.println(account.getId() + "\t" + account.getName() + "\t" + account.getType());
 		}
 		outFile.close();
+		
+		
+		*/
 	}
 }

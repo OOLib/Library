@@ -12,7 +12,7 @@ public class Author {
 	* This is a constructor function.
 	*/
 	Author(String name) {
-		this.name = "name";
+		this.name = name;
 	}
 	
 	/** 
