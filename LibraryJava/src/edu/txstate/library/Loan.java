@@ -1,5 +1,6 @@
 package edu.txstate.library;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /** 
@@ -13,9 +14,28 @@ public abstract class Loan {
 	private Set<Document> documents;
 	private int duration;
 	
+	
 	/** 
-	* @return the duration
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This is a constructor function.
+	*/
+	Loan(Set<Account> accounts, Set<Document> documents, int duration) {
+		this.accounts = accounts;
+		this.documents = documents;
+		this.duration = duration;
+	}
+	
+	/** 
+	* This is a constructor function.
+	*/
+	Loan() {
+		this.accounts = new HashSet<Account>();
+		this.documents = new HashSet<Document>();
+		this.duration = 0;
+	}
+	
+	/**
+	* This function returns the duration of the loan. 
+	* @return duration of loan
 	*/
 	public int getDuration() {
 		// begin-user-code
@@ -23,9 +43,9 @@ public abstract class Loan {
 		// end-user-code
 	}
 
-	/** 
-	* @param duration the duration to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	/**
+	* This function sets the duration of the loan. 
+	* @param duration of the loan
 	*/
 	public void setDuration(int duration) {
 		// begin-user-code

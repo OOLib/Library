@@ -1,25 +1,30 @@
-/**
- * 
- */
 package edu.txstate.library;
 
 /** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author hannahburzynski
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * This class represents a journal loan.
+ * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class JournalLoan extends Loan {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	private Journal journal;
 
+	private Journal journal;
+	
 	/** 
-	* @return the journal
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This is a constructor function.
+	*/
+	JournalLoan(Journal journal) {
+		this.journal = journal;
+	}
+	
+	/** 
+	* This is a default constructor function.
+	*/
+	JournalLoan() {
+		this.journal = null;
+	}
+
+	/**
+	* This function returns the journal associated with the loan. 
+	* @return journal
 	*/
 	public Journal getJournal() {
 		// begin-user-code
@@ -27,9 +32,9 @@ public class JournalLoan extends Loan {
 		// end-user-code
 	}
 
-	/** 
-	* @param journal the journal to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	/**
+	* This function sets the journal associated with the loan.  
+	* @param journal
 	*/
 	public void setJournal(Journal journal) {
 		// begin-user-code

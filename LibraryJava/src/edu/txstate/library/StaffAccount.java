@@ -8,7 +8,6 @@ import java.util.Set;
  */
 public class StaffAccount extends Account {
 
-	private Set<Loan> loans;
 
 	/** 
 	* This is a constructor function.
