@@ -11,15 +11,19 @@ public class JournalLoan extends Loan {
 	/** 
 	* This is a constructor function.
 	*/
-	JournalLoan(Journal journal) {
-		this.journal = journal;
+	JournalLoan(Journal journal, Account account) {
+		this.document = journal;
+		this.account = account;
+		this.duration = 0;
 	}
 	
 	/** 
 	* This is a default constructor function.
 	*/
 	JournalLoan() {
-		this.journal = null;
+		this.document = null;
+		this.account = null;
+		this.duration = 0;
 	}
 
 	/**

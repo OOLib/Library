@@ -12,8 +12,10 @@ public class ConferenceProceedingLoan extends Loan {
 	/** 
 	* This is a constructor function.
 	*/
-	ConferenceProceedingLoan(ConferenceProceeding conferenceProceeding) {
-		this.conferenceProceeding = conferenceProceeding;
+	ConferenceProceedingLoan(ConferenceProceeding conferenceProceeding, Account account) {
+		this.document = conferenceProceeding;
+		this.account = account;
+		this.duration = 0;
 		
 	}
 	
@@ -21,7 +23,9 @@ public class ConferenceProceedingLoan extends Loan {
 	* This is a default constructor function.
 	*/
 	ConferenceProceedingLoan() {
-		this.conferenceProceeding = null;
+		this.document = null;
+		this.account = null;
+		this.duration = 0;
 	}
 	
 

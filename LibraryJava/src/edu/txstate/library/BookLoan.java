@@ -5,41 +5,23 @@ package edu.txstate.library;
  * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class BookLoan extends Loan {
-
-	private Book book;
 	
 	/** 
 	* This is a constructor function.
 	*/
-	BookLoan(Book book) {
-		this.book = book;
+	BookLoan(Book book, Account account) {
+		this.document = book;
+		this.account = account;
+		this.duration = 0;
 	}
 	
 	/** 
 	* This is a default constructor function.
 	*/
 	BookLoan() {
-		this.book = null;
-	}
-
-	/** 
-	* @return the book
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public Book getBook() {
-		// begin-user-code
-		return book;
-		// end-user-code
-	}
-
-	/** 
-	* @param book the book to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setBook(Book book) {
-		// begin-user-code
-		this.book = book;
-		// end-user-code
+		this.document = null;
+		this.account = null;
+		this.duration = 0;
 	}
 
 	/** 
@@ -47,10 +29,7 @@ public class BookLoan extends Loan {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public void extendDuration() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
+	public void extendDuration(int duration) {
+		this.duration = duration;
 	}
 }

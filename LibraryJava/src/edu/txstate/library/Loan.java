@@ -1,8 +1,5 @@
 package edu.txstate.library;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /** 
  * This class represents a loan.
  * @author Hannah Burzynski, Alexander Wagstaff
@@ -10,18 +7,9 @@ import java.util.Set;
  */
 public abstract class Loan {
 
-	private Set<Account> accounts;
-	private Set<Document> documents;
-	private int duration;
-	
-	/** 
-	* This is a default constructor function.
-	*/
-	Loan() {
-		this.accounts = new HashSet<Account>();
-		this.documents = new HashSet<Document>();
-		this.duration = 0;
-	}
+	protected Account account;
+	protected Document document;
+	protected int duration;
 	
 	/**
 	* This function returns the duration of the loan. 
@@ -42,4 +30,45 @@ public abstract class Loan {
 		this.duration = duration;
 		// end-user-code
 	}
+	
+	/**
+	* This function returns the account of the loan. 
+	* @return account of loan
+	*/
+	public Account getAccount() {
+		// begin-user-code
+		return account;
+		// end-user-code
+	}
+
+	/**
+	* This function sets the account of the loan. 
+	* @param account of the loan
+	*/
+	public void setAccount(Account account) {
+		// begin-user-code
+		this.account = account;
+		// end-user-code
+	}
+	
+	/**
+	* This function returns the document of the loan. 
+	* @return document of loan
+	*/
+	public Document getDocument() {
+		// begin-user-code
+		return document;
+		// end-user-code
+	}
+
+	/**
+	* This function sets the document of the loan. 
+	* @param document of the loan
+	*/
+	public void setDuration(Document document) {
+		// begin-user-code
+		this.document = document;
+		// end-user-code
+	}
+	
 }

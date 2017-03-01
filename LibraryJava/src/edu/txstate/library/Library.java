@@ -26,6 +26,7 @@ public class Library {
 		//Initialize directories
 		accounts = new HashSet<Account>();
 		documents = new HashSet<Document>();
+		loans = new HashSet<Loan>();
 		
 		// I/O
 		Scanner inFile = null;
@@ -398,6 +399,22 @@ public class Library {
 	*/
 	public void displayLoans() {
 		// TODO Auto-generated method stub
+		
+		//TEST
+		loans.add(new BookLoan(new Book(), new StudentAccount()));
+		
+		// Check if any loans exist
+		if(loans.isEmpty()) {
+			System.out.println("There are no loans.");
+		} else {
+			for (Loan loan : loans) {
+				System.out.println("Account:" + "\t" + loan.getAccount().getName());
+				System.out.println("Document" + "\t" + loan.getDocument().getTitle());
+				System.out.println("Duration" + "\t" + loan.getDuration());
+			}
+		}
+		
+		
 
 	}
 
