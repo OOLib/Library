@@ -278,7 +278,8 @@ public class Library {
 		try{
 			choice = Integer.parseInt(scan.nextLine());
 		}catch (NumberFormatException e) {
-			e.printStackTrace();
+			System.out.println("Error: Entry must be an integer.");
+			System.out.println(" ");
 		}
 		
 		switch(choice)
@@ -302,8 +303,13 @@ public class Library {
 			
 			System.out.println("Enter the author. For a List of authors, seperate by a comma: ");
 			bWords[5] = scan.nextLine();
-						
-			documents.add(new Book(bWords[0], bWords[1], bWords[2], bWords[3], Integer.parseInt(bWords[4]), bWords[5], false));
+			
+			try{
+				documents.add(new Book(bWords[0], bWords[1], bWords[2], bWords[3], Integer.parseInt(bWords[4]), bWords[5], false));
+			}catch(NumberFormatException e) {
+				System.out.println("Error adding book. Number of copies must be an integer. Aborting insertion.");
+				System.out.println(" "); // Print an empty line for formatting
+			}
 			break;
 			
 		case 2:
@@ -329,7 +335,12 @@ public class Library {
 			System.out.println("Enter the articles, seperated by a comma: ");
 			jWords[5] = scan.nextLine();
 			
-			documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[2]), Integer.parseInt(jWords[3]), jWords[4], jWords[5]));
+			try{
+				documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[2]), Integer.parseInt(jWords[3]), jWords[4], jWords[5]));
+			}catch(NumberFormatException e) {
+				System.out.println("Error adding journal. Volume and Issue numbers must be integers. aborting insertion ");
+				System.out.println(" "); // Print an empty line for formatting
+			}
 			break;
 			
 		case 4:
@@ -340,7 +351,6 @@ public class Library {
 			break;
 			
 		}
-		
 	}
 
 	/** 
@@ -369,10 +379,37 @@ public class Library {
 	* This function searches the library for a document.
 	*/
 	public void searchLibrary() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
+		System.out.println("Please enter the type of search you wish to conduct.");
+		System.out.println("1. Search for a document by title");
+		System.out.println("2. Search for document(s) by author");
+		Scanner scan = new Scanner(System.in);
+		int choice = 0;
+		
+		try{
+			choice = scan.nextInt();
+		}catch(NumberFormatException e) {
+			System.out.println("Error: not a valid selection. Aborting search.");
+			System.out.println(" "); // Print a blank line for formatting
+		}
+		
+		switch (choice) {
+		
+		case 1:
+			searchDocuments();
+			break;
+		
+		case 2:
+			break;
+		
+		default:
+			System.out.println("Not a valid search type selection. Aborting search attempt");
+			break;
+		}
+	}
+	
+	public void searchAuthor()
+	{
+		
 	}
 
 	/** 
