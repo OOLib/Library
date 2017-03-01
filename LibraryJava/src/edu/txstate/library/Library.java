@@ -228,7 +228,7 @@ public class Library {
 			userInfo[0] = scan.nextLine();
 			System.out.println("Enter the student user name: ");
 			userInfo[1] = scan.nextLine();
-			userInfo[3] = "Student";
+			userInfo[2] = "Student";
 			accounts.add(new StudentAccount(Integer.parseInt(userInfo[0]), userInfo[1], userInfo[2]));
 			break;
 			
@@ -238,7 +238,7 @@ public class Library {
 			staffInfo[0] = scan.nextLine();
 			System.out.println("Enter the staff user name: ");
 			staffInfo[1] = scan.nextLine();
-			staffInfo[3] = "Staff";
+			staffInfo[2] = "Staff";
 			accounts.add(new StaffAccount(Integer.parseInt(staffInfo[0]), staffInfo[1], staffInfo[2]));
 			break;
 			
@@ -248,7 +248,7 @@ public class Library {
 			librarianInfo[0] = scan.nextLine();
 			System.out.println("Enter the Librarian user name: ");
 			librarianInfo[1] = scan.nextLine();
-			librarianInfo[3] = "Librarian";
+			librarianInfo[2] = "Librarian";
 			accounts.add(new LibrarianAccount(Integer.parseInt(librarianInfo[0]), librarianInfo[1], librarianInfo[2]));
 			break;
 		
