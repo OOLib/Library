@@ -16,14 +16,14 @@ public class Console {
 		if (library == null) {
 			library = new Library();
 		}
-		// Menu display
-		System.out.println("Welcome to the Library System. Select an option below:\n" + "1. Add a new user.\n"
-				+ "2. Add a new document.\n" + "3. Search for a document.\n" + "4. Borrow a document.\n"
-				+ "5. Return a document.\n" + "6. Display all loans.\n" + "7. Save and exit.\n");
 		try {
 			// Get menu selection
 			int selection;
 			do {
+				// Menu display
+				System.out.println("Welcome to the Library System. Select an option below:\n" + "1. Add a new user.\n"
+						+ "2. Add a new document.\n" + "3. Search for a document.\n" + "4. Borrow a document.\n"
+						+ "5. Return a document.\n" + "6. Display all loans.\n" + "7. Save and exit.\n");
 				selection = in.nextInt();
 				// Execute menu selection
 				switch (selection) {

@@ -256,7 +256,6 @@ public class Library {
 			System.out.println("Not a valid account selection. Aborting entry.");
 			break;
 		}
-		scan.close();
 		// TODO correct case switch depending on requirements
 
 	}
@@ -341,7 +340,6 @@ public class Library {
 			break;
 			
 		}
-		scan.close();
 		
 	}
 
@@ -365,7 +363,6 @@ public class Library {
 		
 		}
 		// TODO search only implemented for books and journals so far. Add search by author.
-		scan.close();
 	}
 
 	/** 
