@@ -52,7 +52,7 @@ public class Console {
 					System.out.println("Invalid selection. Enter the number of the option.");
 				}
 			} while (selection != 7);
-		} catch (Exception e) {
+		} catch (Exception e) { // TODO: Figure out why No Such Element Exception is being thrown
 			System.out.println("Error: " + e);
 		}
 		// Close scanner input stream

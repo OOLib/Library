@@ -1,5 +1,6 @@
 package edu.txstate.library;
 
+
 /** 
  * This class represents a book in the library.
  * @author Hannah Burzynski, Alexander Wagstaff
@@ -100,4 +101,12 @@ public class Book extends Document {
 		this.numCopies = numCopies;
 		// end-user-code
 	}
+	
+	public String toString()
+	{
+		String a = authors.toString();
+		return "Title: " + title + "\nPublisher: " + publisher + "\nPublication Date: " + publicationDate 
+				+ "\nISBN:  " + isbn + "\nCopies:" + numCopies +  "\nAuthors: " + a;
+	}
+	
 }

@@ -82,4 +82,27 @@ public abstract class Document {
 		this.publisher = publisher;
 		// end-user-code
 	}
+	
+	public boolean equals(Object o)
+	{
+		if (o == null)
+			return false;
+		
+		if (!(o instanceof Document))
+			return false;
+		
+		Document oDocument = (Document) o;
+		String lowerTitle = title.toLowerCase();
+		String oLowerTitle = oDocument.title.toLowerCase();
+		
+		if(lowerTitle.equals(oLowerTitle))
+			return true;
+		else
+			return false;
+	}
+	
+	public int hashCode()
+	{
+		return title.hashCode();
+	}
 }

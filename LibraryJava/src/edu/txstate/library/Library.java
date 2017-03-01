@@ -348,8 +348,23 @@ public class Library {
 	* This function allows the user to search for a document based on title or author.
 	*/
 	public void searchDocuments() {
-		// TODO Auto-generated method stub
-
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the title of a document to search for");
+		String query = scan.nextLine();
+		Book search = new Book();
+		search.setTitle(query);
+		
+		if(documents.contains(search))
+		{
+			for(Document doc : documents)
+			{
+				if(doc.equals(search))
+					System.out.println(doc.toString());
+			}
+		
+		}
+		// TODO search only implemented for books so far.
+		scan.close();
 	}
 
 	/** 

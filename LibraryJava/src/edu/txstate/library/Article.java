@@ -65,4 +65,9 @@ public class Article {
 	public void setLastPage(int lastPage) {
 		this.lastPage = lastPage;
 	}
+	
+	public String toString()
+	{
+		return "Title: " + title + "\nFirst Page: " + firstPage + "\nLast Page: " + lastPage;
+	}
 }
