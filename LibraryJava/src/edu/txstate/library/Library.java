@@ -368,24 +368,6 @@ public class Library {
 	}
 
 	/** 
-	* This function allows the user to borrow a document.
-	*/
-	public void borrowDocument() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function allows a user to checkout a document.
-	*/
-	public void checkoutDocument() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
-
-	/** 
 	* This function searches the library for a document.
 	*/
 	public void searchLibrary() {
@@ -395,6 +377,14 @@ public class Library {
 		// end-user-code
 	}
 
+	/** 
+	* This function allows the user to borrow a document.
+	*/
+	public void borrowDocument() {
+		// TODO Auto-generated method stub
+
+	}
+	
 	/** 
 	* This function allows the user to return a document.
 	*/
@@ -416,12 +406,11 @@ public class Library {
 	*/
 	public void save() {
 		
-		/*
+		
 
 		// TODO Auto-generated method stub
 		
 		PrintWriter outFile = null;
-		
 		//-------------------------
 		// Write to book file
 		//-------------------------
@@ -437,20 +426,18 @@ public class Library {
 		for (Document document : documents) {
 			if (document instanceof Book) {
 				Book book = (Book) document;
-				outFile.print(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getIsbn() + "\t" + book.getNumCopies());
+				outFile.print(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getPublicationDate() + "\t" + book.getIsbn() + "\t" + book.getNumCopies() + "\t");
 			
-				String authorString = "";
+				String authorString = new String();
 				for (Author author : book.authors) {
-					authorString.concat(author.getName());
-					authorString.concat(",");
+					authorString+=author.getName();
+					authorString+=",";
 				}
-				//remove last comma
-				System.out.print(authorString);
-				//System.out.println(authorString.length());
-				//authorString = authorString.substring(0, authorString.length()-1);
-				//add newline
-				//authorString.concat("\n");
-				
+				// remove last comma
+				authorString = authorString.substring(0, authorString.length()-1);
+				outFile.print(authorString);
+				// add new line
+				outFile.print("\n");	
 			}
 		}
 		outFile.close();
@@ -470,7 +457,22 @@ public class Library {
 		for (Document document : documents) {
 			if (document instanceof Journal) {
 				Journal journal = (Journal) document;
-				outFile.println(journal.getTitle() + "\t" + journal.getVolume());
+				outFile.print(journal.getTitle() + "\t" + journal.getPublicationDate() + "\t" + journal.getVolume() + "\t" + journal.getIssueNumber() + "\t" + journal.getPublisher() + "\t");
+				
+				String articleString = new String();
+				for (Article article : journal.getArticles()) {
+					articleString+=article.getTitle();
+					articleString+=".";
+					articleString+=article.getFirstPage();
+					articleString+=".";
+					articleString+=article.getLastPage();
+					articleString+=",";
+				}
+				// remove last comma
+				articleString = articleString.substring(0, articleString.length()-1);
+				outFile.print(articleString);
+				// add new line
+				outFile.print("\n");	
 			}
 		}
 		outFile.close();
@@ -492,7 +494,10 @@ public class Library {
 		}
 		outFile.close();
 		
+		//-------------------------
+		// Write to loan file
+		//-------------------------
 		
-		*/
+		
 	}
 }

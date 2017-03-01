@@ -10,7 +10,6 @@ import java.util.Set;
 public class Journal extends Document {
 
 	private int volume;
-	// issue number
 	private int issueNumber;
 	private int numCopies;
 	private Set<Article> articles;
@@ -105,4 +104,15 @@ public class Journal extends Document {
 		this.numCopies = numCopies;
 		// end-user-code
 	}
+	
+	/**
+	* This function returns the set of articles. 
+	* @return articles
+	*/
+	public Set<Article> getArticles() {
+		// begin-user-code
+		return articles;
+		// end-user-code
+	}
+	
 }
