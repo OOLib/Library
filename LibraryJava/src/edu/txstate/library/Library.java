@@ -351,7 +351,7 @@ public class Library {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the title of a document to search for");
 		String query = scan.nextLine();
-		Book search = new Book();
+		Book search = new Book(); // can be any Document type. Book used for convenience
 		search.setTitle(query);
 		
 		if(documents.contains(search))
@@ -363,7 +363,7 @@ public class Library {
 			}
 		
 		}
-		// TODO search only implemented for books so far.
+		// TODO search only implemented for books and journals so far. Add search by author.
 		scan.close();
 	}
 

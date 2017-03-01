@@ -70,4 +70,22 @@ public class Article {
 	{
 		return "Title: " + title + "\nFirst Page: " + firstPage + "\nLast Page: " + lastPage;
 	}
+	
+	public boolean equals(Object o)
+	{
+		if(o == null)
+			return false;
+		
+		if(!(o instanceof Article))
+			return false;
+		
+		Article oArticle = (Article) o;
+		String lowerTitle = title.toLowerCase();
+		String oLowerTitle = oArticle.title.toLowerCase();
+		
+		if(lowerTitle.equals(oLowerTitle))
+			return true;
+		else
+			return false;
+	}
 }
