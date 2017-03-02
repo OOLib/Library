@@ -17,7 +17,14 @@ public class ConferenceProceeding extends Document {
 	/** 
 	* This is a constructor function.
 	*/
-	ConferenceProceeding(int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate) {
+	ConferenceProceeding(String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate) {
+		
+		this.title = title;
+		this.publisher = publisher;
+		this.publicationDate = publicationDate;
+		// Add authors
+		//this.authors.add(e)
+		
 		this.numberOfCopies = numberOfCopies;
 		this.articles = new HashSet<Article>();
 		this.conferenceLocation = conferenceLocation;

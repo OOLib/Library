@@ -1,6 +1,2 @@
-1	Dave Stacy	faculty
-2	April Sales	faculty
-3	Gabri Loa	student
-4	Ging Henie	student
-5	Roy Flores	librarian
-6	Elizabeth Harwell	librarian
+1	Cool Stuff	Austin	2/2/2
+2	Rad Junk	San Marcos	3/3/3

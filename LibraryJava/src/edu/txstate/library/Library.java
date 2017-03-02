@@ -155,30 +155,88 @@ public class Library {
 		}*/
 		
 		inFile.close();
-		bookFile.close();
+		//-------------------------
+		// Read from conferenceProceeding file
+		//-------------------------
+		/*
+		// int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
+		try {
+			// If the user has not used the system before, then initialize with some pre-defined data
+			if (!(bookFile.hasNext())){
+				inFile = new Scanner(new FileReader("res/conference-proceeding-initial.txt"));
+			} else {
+				inFile = new Scanner(new FileReader("res/conference-proceeding-data.txt"));
+			}
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
+		//Read from files
+		while (inFile.hasNext()) {
+			String line = inFile.nextLine();
+			String[] words = line.split("\t");
+			
+			// Add conference proceeding to set
+			// documents.add(new ConferenceProceeding(Integer.parseInt(words[0]), words[1], words[2], words[3]));
+		}
+		// TEST - display the set
+		for (Document document : documents) {
+			if (document instanceof ConferenceProceeding) {
+				ConferenceProceeding conferenceProceeding = (ConferenceProceeding) document;
+				System.out.println(conferenceProceeding.getTitle());
+			}
+		}
+		
+		inFile.close(); */
+		
+		//-------------------------
+		// Read from loan file
+		//-------------------------
+		// account, document, duration
+
+		try {
+			inFile = new Scanner(new FileReader("res/loan-data.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		while (inFile.hasNext()) {
+			// Divide line into parameters
+			String line = inFile.nextLine();
+			String[] words = line.split("\t");
+			
+			// TODO implement commented functionality
+			// search for account based on id
+			// search for document based on title
+			//---------------------------------------
+			
+			// TEST
+			Account account = new StudentAccount();
+			Document document = new Book();
+			//-----
+			int duration = Integer.parseInt(words[2]);
+
+			// Add book loan
+			if (document instanceof Book) {
+				loans.add(new BookLoan((Book)document, account, duration));
+			}
+			// Add journal loan
+			if (document instanceof Journal) {
+				loans.add(new JournalLoan((Journal)document, account, duration));
+			}
+			// Add conference proceeding loan
+			if (document instanceof ConferenceProceeding) {
+				loans.add(new ConferenceProceedingLoan((ConferenceProceeding)document, account, duration));
+			}
+		}
+		inFile.close(); //Close file
+		
 		//-------------------------------------------------------------------------
 		// Data reading finished
 		//-------------------------------------------------------------------------
-		
-	}
-
-	
-
-	/**
-	* This function returns the total number of documents borrowed in the library. 
-	* @return the numDocsBorrowed
-	*/
-	public int getNumDocsBorrowed() {
-		return numDocsBorrowed;
-	}
-
-	/**
-	* This function sets the value of the total number of documents borrowed in the library. 
-	* @param numDocsBorrowed the numDocsBorrowed to set
-	*/
-	public void setNumDocsBorrowed(int numDocsBorrowed) {
-		this.numDocsBorrowed = numDocsBorrowed;
+		bookFile.close();
 	}
 
 	/** 
@@ -190,14 +248,6 @@ public class Library {
 		// begin-user-code
 		// TODO Auto-generated method stub
 		// end-user-code
-	}
-
-	/** 
-	* This function sends an overdueBookReminder message to the user if they have not returned the document by the time the loan has ended.
-	* @param account
-	*/
-	public void overdueBookReminder(Object account) {
-		// TODO Auto-generated method stub
 	}
 
 	/** 
@@ -589,7 +639,7 @@ public class Library {
 		//-------------------------
 		// Write to loan file
 		//-------------------------
-		
+		/*
 		try {
 			outFile = new PrintWriter("res/loan-data.txt");
 		} catch (FileNotFoundException e) {
@@ -608,9 +658,10 @@ public class Library {
 			} else {
 				System.out.println("Invalid loan.");
 			}
-			outFile.print("done");
+			outFile.print(loan.getAccount.getId(), loan.getDocument.getTitle(), loan.getDuration(), type);
 		}
 		outFile.close();
+		*/
 		
 		//-------------------------
 		// Write to conference proceeding file
