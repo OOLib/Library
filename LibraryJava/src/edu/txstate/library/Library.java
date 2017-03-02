@@ -203,9 +203,9 @@ public class Library {
 	/** 
 	* This function adds a new user to the library system.
 	*/
-	public void addNewUser() {
+	public void addNewUser(Scanner in) {
 		
-		Scanner scan = new Scanner(System.in);
+		
 		
 		System.out.println("Select the type of User to add");
 		System.out.println("1. Add a new User Account");
@@ -215,7 +215,7 @@ public class Library {
 		int choice = 0;
 		
 		try{
-			choice = Integer.parseInt(scan.nextLine());
+			choice = Integer.parseInt(in.nextLine());
 		}catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
@@ -225,9 +225,9 @@ public class Library {
 		case 1:
 			String[] userInfo = new String[3];
 			System.out.println("Enter the user id: ");
-			userInfo[0] = scan.nextLine();
+			userInfo[0] = in.nextLine();
 			System.out.println("Enter the student user name: ");
-			userInfo[1] = scan.nextLine();
+			userInfo[1] = in.nextLine();
 			userInfo[2] = "Student";
 			accounts.add(new StudentAccount(Integer.parseInt(userInfo[0]), userInfo[1], userInfo[2]));
 			break;
@@ -235,9 +235,9 @@ public class Library {
 		case 2:
 			String[] staffInfo = new String[3];
 			System.out.println("Enter the staff id: ");
-			staffInfo[0] = scan.nextLine();
+			staffInfo[0] = in.nextLine();
 			System.out.println("Enter the staff user name: ");
-			staffInfo[1] = scan.nextLine();
+			staffInfo[1] = in.nextLine();
 			staffInfo[2] = "Staff";
 			accounts.add(new StaffAccount(Integer.parseInt(staffInfo[0]), staffInfo[1], staffInfo[2]));
 			break;
@@ -245,9 +245,9 @@ public class Library {
 		case 3:
 			String[] librarianInfo = new String[3];
 			System.out.println("Enter the Librarian id: ");
-			librarianInfo[0] = scan.nextLine();
+			librarianInfo[0] = in.nextLine();
 			System.out.println("Enter the Librarian user name: ");
-			librarianInfo[1] = scan.nextLine();
+			librarianInfo[1] = in.nextLine();
 			librarianInfo[2] = "Librarian";
 			accounts.add(new LibrarianAccount(Integer.parseInt(librarianInfo[0]), librarianInfo[1], librarianInfo[2]));
 			break;
@@ -263,9 +263,9 @@ public class Library {
 	/** 
 	* This function adds a new document to the library system.
 	*/
-	public void addNewDocument() {
-		// TODO Figure out Null Pointer Exception
-		Scanner scan = new Scanner(System.in);
+	public void addNewDocument(Scanner in) {
+
+
 		
 		System.out.println("Select the Type of document to add");
 		System.out.println("1. Add a book");
@@ -276,7 +276,7 @@ public class Library {
 		int choice = 0;
 		
 		try{
-			choice = Integer.parseInt(scan.nextLine());
+			choice = Integer.parseInt(in.nextLine());
 		}catch (NumberFormatException e) {
 			System.out.println("Error: Entry must be an integer.");
 			System.out.println(" ");
@@ -287,22 +287,22 @@ public class Library {
 		case 1:
 			String[] bWords = new String[6];
 			System.out.println("Enter the book Title: ");
-			bWords[0] = scan.nextLine();
+			bWords[0] = in.nextLine();
 			
 			System.out.println("Enter the publisher: ");
-			bWords[1] = scan.nextLine();
+			bWords[1] = in.nextLine();
 			
 			System.out.println("Enter the date of publication: ");
-			bWords[2] = scan.nextLine();
+			bWords[2] = in.nextLine();
 			
 			System.out.println("Enter the ISBN: ");
-			bWords[3] = scan.nextLine();
+			bWords[3] = in.nextLine();
 			
 			System.out.println("Enter the number of copies: ");
-			bWords[4] = scan.nextLine();
+			bWords[4] = in.nextLine();
 			
 			System.out.println("Enter the author. For a List of authors, seperate by a comma: ");
-			bWords[5] = scan.nextLine();
+			bWords[5] = in.nextLine();
 			
 			try{
 				documents.add(new Book(bWords[0], bWords[1], bWords[2], bWords[3], Integer.parseInt(bWords[4]), bWords[5], false));
@@ -318,22 +318,22 @@ public class Library {
 		case 3:
 			String[] jWords = new String[6];
 			System.out.println("Enter the journal title: ");
-			jWords[0] = scan.nextLine();
+			jWords[0] = in.nextLine();
 			
 			System.out.println("Enter the date of publication: ");
-			jWords[1] = scan.nextLine();
+			jWords[1] = in.nextLine();
 			
 			System.out.println("Enter the volume number: ");
-			jWords[2] = scan.nextLine();
+			jWords[2] = in.nextLine();
 			
 			System.out.println("Enter the issue number: ");
-			jWords[3] = scan.nextLine();
+			jWords[3] = in.nextLine();
 			
 			System.out.println("Enter the Publisher: ");
-			jWords[4] = scan.nextLine();
+			jWords[4] = in.nextLine();
 			
 			System.out.println("Enter the articles, seperated by a comma: ");
-			jWords[5] = scan.nextLine();
+			jWords[5] = in.nextLine();
 			
 			try{
 				documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[2]), Integer.parseInt(jWords[3]), jWords[4], jWords[5]));
@@ -356,10 +356,10 @@ public class Library {
 	/** 
 	* This function allows the user to search for a document based on title or author.
 	*/
-	public void searchDocuments() {
-		Scanner scan = new Scanner(System.in);
+	public void searchDocuments(Scanner in) {
+		
 		System.out.println("Enter the title of a document to search for");
-		String query = scan.nextLine();
+		String query = in.nextLine();
 		Book search = new Book(); // can be any Document type. Book used for convenience
 		search.setTitle(query);
 		
@@ -372,21 +372,22 @@ public class Library {
 			}
 		
 		}
-		// TODO search only implemented for books and journals so far. Add search by author.
+		else
+			System.out.println("Document was not found in the system.");
+		// TODO Figure out why case sensitive
 	}
 
 	/** 
 	* This function searches the library for a document.
 	*/
-	public void searchLibrary() {
+	public void searchLibrary(Scanner in) {
 		System.out.println("Please enter the type of search you wish to conduct.");
 		System.out.println("1. Search for a document by title");
 		System.out.println("2. Search for document(s) by author");
-		Scanner scan = new Scanner(System.in);
 		int choice = 0;
 		
 		try{
-			choice = scan.nextInt();
+			choice = Integer.parseInt(in.nextLine());
 		}catch(NumberFormatException e) {
 			System.out.println("Error: not a valid selection. Aborting search.");
 			System.out.println(" "); // Print a blank line for formatting
@@ -395,10 +396,11 @@ public class Library {
 		switch (choice) {
 		
 		case 1:
-			searchDocuments();
+			searchDocuments(in);
 			break;
 		
 		case 2:
+			searchAuthor(in);
 			break;
 		
 		default:
@@ -407,9 +409,17 @@ public class Library {
 		}
 	}
 	
-	public void searchAuthor()
+	public void searchAuthor(Scanner in)
 	{
-		
+		System.out.println("Enter the name of an author to search for");
+		String name = in.nextLine();
+		Author authorQuery = new Author(name);
+		for(Document doc : documents)
+		{
+			if(doc.authors.contains(authorQuery))
+				System.out.println(doc);
+		}
+		// TODO not entirely functioning yet. Case Sensitive
 	}
 
 	/** 

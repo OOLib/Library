@@ -41,4 +41,27 @@ public class Author {
 	{
 		return name;
 	}
+	
+	public boolean equals(Object o)
+	{
+		if (o == null)
+			return false;
+		
+		if(!(o instanceof Author))
+			return false;
+		
+		Author oAuthor = (Author) o;
+		String lowerName = name.toLowerCase();
+		String oLowerName = oAuthor.name.toLowerCase();
+		
+		if(lowerName.contains(oLowerName))
+			return true;
+		else
+			return false;
+	}
+	
+	public int hashCode()
+	{
+		return name.hashCode();
+	}
 }

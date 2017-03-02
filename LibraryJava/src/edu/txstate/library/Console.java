@@ -18,23 +18,28 @@ public class Console {
 		}
 		try {
 			// Get menu selection
-			int selection;
+			int selection = 0;
 			do {
 				// Menu display
 				System.out.println("Welcome to the Library System. Select an option below:\n" + "1. Add a new user.\n"
-						+ "2. Add a new document.\n" + "3. Search for a document.\n" + "4. Borrow a document.\n"
+						+ "2. Add a new document.\n" + "3. Search the library.\n" + "4. Borrow a document.\n"
 						+ "5. Return a document.\n" + "6. Display all loans.\n" + "7. Save and exit.\n");
-				selection = in.nextInt();
+				try{
+				selection = Integer.parseInt(in.nextLine());
+				}catch(NumberFormatException e)
+				{
+				System.out.println("Not a number, please enter a number");	
+				}
 				// Execute menu selection
 				switch (selection) {
 				case 1:
-					library.addNewUser();
+					library.addNewUser(in);
 					break;
 				case 2:
-					library.addNewDocument();
+					library.addNewDocument(in);
 					break;
 				case 3:
-					library.searchDocuments();
+					library.searchLibrary(in);
 					break;
 				case 4:
 					library.borrowDocument();
