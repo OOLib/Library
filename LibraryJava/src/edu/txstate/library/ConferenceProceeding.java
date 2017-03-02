@@ -1,5 +1,6 @@
 package edu.txstate.library;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /** 
@@ -10,19 +11,32 @@ public class ConferenceProceeding extends Document {
 
 	private int numberOfCopies;
 	private Set<Article> articles;
-	private ConferenceProceedingLoan conferenceProceedingLoan;
 	private String conferenceLocation;
 	private String conferenceDate;
 
 	/** 
 	* This is a constructor function.
 	*/
-	ConferenceProceeding(int numberOfCopies, Set<Article> articles, ConferenceProceedingLoan conferenceProceedingLoan, String conferenceLocation, String conferenceDate) {
+	ConferenceProceeding(int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate) {
 		this.numberOfCopies = numberOfCopies;
-		this.articles = articles;
-		this.conferenceProceedingLoan = conferenceProceedingLoan;
+		this.articles = new HashSet<Article>();
 		this.conferenceLocation = conferenceLocation;
 		this.conferenceDate = conferenceDate;
+		
+		// If there are multiple articles
+		if (articleString.contains(",")){
+			String[] words = articleString.split(",");
+			for (int i = 0; i < words.length; i++) {
+				// split each article into individual attributes: title, firstpage, lastpage
+				String[] articleAttributes = words[i].split("[.]");
+				this.articles.add(new Article(articleAttributes[0],Integer.parseInt(articleAttributes[1]),Integer.parseInt(articleAttributes[2])));
+			}
+		} else {
+			// If only a single article
+			String[] articleAttributes = articleString.split("[.]");
+			// title, firstpage, lastpage
+			this.articles.add(new Article(articleAttributes[0],Integer.parseInt(articleAttributes[1]),Integer.parseInt(articleAttributes[2])));
+		}
 	}
 	/**
 	* This is a default constructor function.
@@ -30,7 +44,6 @@ public class ConferenceProceeding extends Document {
 	ConferenceProceeding() {
 		this.numberOfCopies = 0;
 		this.articles = null;
-		this.conferenceProceedingLoan = null;
 		this.conferenceLocation = "";
 		this.conferenceDate = "";
 	}
@@ -93,24 +106,14 @@ public class ConferenceProceeding extends Document {
 		this.conferenceDate = conferenceDate;
 		// end-user-code
 	}
-
-	/** 
-	* @return the conferenceProceedingLoan
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	
+	/**
+	* This function returns the set of articles. 
+	* @return articles
 	*/
-	public ConferenceProceedingLoan getConferenceProceedingLoan() {
+	public Set<Article> getArticles() {
 		// begin-user-code
-		return conferenceProceedingLoan;
-		// end-user-code
-	}
-
-	/** 
-	* @param conferenceProceedingLoan the conferenceProceedingLoan to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setConferenceProceedingLoan(ConferenceProceedingLoan conferenceProceedingLoan) {
-		// begin-user-code
-		this.conferenceProceedingLoan = conferenceProceedingLoan;
+		return articles;
 		// end-user-code
 	}
 }

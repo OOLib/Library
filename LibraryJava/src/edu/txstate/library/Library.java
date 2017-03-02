@@ -498,8 +498,6 @@ public class Library {
 	* This function saves the state of the library and exits the system.
 	*/
 	public void save() {
-		
-		
 
 		// TODO Auto-generated method stub
 		
@@ -592,6 +590,63 @@ public class Library {
 		// Write to loan file
 		//-------------------------
 		
+		try {
+			outFile = new PrintWriter("res/loan-data.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (Loan loan : loans) {
+			String type = "";
+			if (loan instanceof BookLoan) {
+				type = "BOOK";
+			} else if (loan instanceof JournalLoan) {
+				type = "JOURNAL";
+			} else if (loan instanceof ConferenceProceedingLoan) {
+				type = "CONFERENCEPROCEEDING";
+			} else {
+				System.out.println("Invalid loan.");
+			}
+			outFile.print("done");
+		}
+		outFile.close();
 		
+		//-------------------------
+		// Write to conference proceeding file
+		//-------------------------
+		// int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
+		
+		/*
+		try {
+			outFile = new PrintWriter("res/conference-proceeding-data.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (Document document : documents) {
+			if (document instanceof ConferenceProceeding) {
+				ConferenceProceeding conferenceProceeding = (ConferenceProceeding) document;
+				outFile.print(conferenceProceeding.getNumberOfCopies() + "\t");
+				
+				String articleString = new String();
+				for (Article article : conferenceProceeding.getArticles()) {
+					articleString+=article.getTitle();
+					articleString+=".";
+					articleString+=article.getFirstPage();
+					articleString+=".";
+					articleString+=article.getLastPage();
+					articleString+=",";
+				}
+				// remove last comma
+				articleString = articleString.substring(0, articleString.length()-1);
+				outFile.print(articleString);
+				outFile.print(conferenceProceeding.getNumberOfCopies() + "\t" + conferenceProceeding.getConferenceLocation() + "\t" + conferenceProceeding.getConferenceDate());
+				// add new line
+				outFile.print("\n");	
+			}
+		}
+		outFile.close(); */
 	}
 }
