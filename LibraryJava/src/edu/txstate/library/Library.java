@@ -651,9 +651,8 @@ public class Library {
 		//-------------------------
 		// Write to conference proceeding file
 		//-------------------------
-		// int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
+		// String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
 		
-		/*
 		try {
 			outFile = new PrintWriter("res/conference-proceeding-data.txt");
 		} catch (FileNotFoundException e) {
@@ -664,6 +663,18 @@ public class Library {
 		for (Document document : documents) {
 			if (document instanceof ConferenceProceeding) {
 				ConferenceProceeding conferenceProceeding = (ConferenceProceeding) document;
+				outFile.print(conferenceProceeding.getTitle() + "\t");
+				//Authors
+				String authorString = new String();
+				for (Author author : conferenceProceeding.authors) {
+					authorString+=author.getName();
+					authorString+=",";
+				}
+				// remove last comma
+				authorString = authorString.substring(0, authorString.length()-1);
+				outFile.print(authorString + "\t");
+				outFile.print(conferenceProceeding.getPublisher() + "\t");
+				outFile.print(conferenceProceeding.getPublicationDate() + "\t");
 				outFile.print(conferenceProceeding.getNumberOfCopies() + "\t");
 				
 				String articleString = new String();
@@ -677,12 +688,12 @@ public class Library {
 				}
 				// remove last comma
 				articleString = articleString.substring(0, articleString.length()-1);
-				outFile.print(articleString);
-				outFile.print(conferenceProceeding.getNumberOfCopies() + "\t" + conferenceProceeding.getConferenceLocation() + "\t" + conferenceProceeding.getConferenceDate());
+				outFile.print(articleString + "\t");
+				outFile.print(conferenceProceeding.getConferenceLocation() + "\t" + conferenceProceeding.getConferenceDate());
 				// add new line
 				outFile.print("\n");	
 			}
 		}
-		*/outFile.close();
+		outFile.close();
 	}
 }
