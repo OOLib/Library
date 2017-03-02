@@ -158,8 +158,8 @@ public class Library {
 		//-------------------------
 		// Read from conferenceProceeding file
 		//-------------------------
-		/*
-		// int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
+		
+		// String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -178,7 +178,7 @@ public class Library {
 			String[] words = line.split("\t");
 			
 			// Add conference proceeding to set
-			// documents.add(new ConferenceProceeding(Integer.parseInt(words[0]), words[1], words[2], words[3]));
+			documents.add(new ConferenceProceeding(words[0], words[1], words[2], words[3], Integer.parseInt(words[0]), words[4], words[5], words[6]));
 		}
 		// TEST - display the set
 		for (Document document : documents) {
@@ -188,7 +188,7 @@ public class Library {
 			}
 		}
 		
-		inFile.close(); */
+		inFile.close();
 		
 		//-------------------------
 		// Read from loan file
@@ -639,7 +639,7 @@ public class Library {
 		//-------------------------
 		// Write to loan file
 		//-------------------------
-		/*
+		
 		try {
 			outFile = new PrintWriter("res/loan-data.txt");
 		} catch (FileNotFoundException e) {
@@ -658,10 +658,13 @@ public class Library {
 			} else {
 				System.out.println("Invalid loan.");
 			}
-			outFile.print(loan.getAccount.getId(), loan.getDocument.getTitle(), loan.getDuration(), type);
+			
+			outFile.print(Integer.toString(loan.getAccount().getId()) + "\t");
+			outFile.print(loan.getDocument().getTitle()+ "\t");
+			outFile.print(Integer.toString(loan.getDuration())+ "\t");
+			outFile.print(type + "\n");
 		}
 		outFile.close();
-		*/
 		
 		//-------------------------
 		// Write to conference proceeding file
@@ -698,6 +701,6 @@ public class Library {
 				outFile.print("\n");	
 			}
 		}
-		outFile.close(); */
+		*/outFile.close();
 	}
 }

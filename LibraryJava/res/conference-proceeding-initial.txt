@@ -1,2 +1,1 @@
-1	Cool Stuff	Austin	2/2/2
-2	Rad Junk	San Marcos	3/3/3
+title	a1,a2,a3	publisher	pubdate	2	a1.3.4,a2.3.4	location	date

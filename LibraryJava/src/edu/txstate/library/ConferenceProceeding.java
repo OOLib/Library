@@ -9,7 +9,6 @@ import java.util.Set;
  */
 public class ConferenceProceeding extends Document {
 
-	private int numberOfCopies;
 	private Set<Article> articles;
 	private String conferenceLocation;
 	private String conferenceDate;
@@ -17,13 +16,21 @@ public class ConferenceProceeding extends Document {
 	/** 
 	* This is a constructor function.
 	*/
-	ConferenceProceeding(String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate) {
+	ConferenceProceeding(String title, String authorString, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate) {
 		
 		this.title = title;
 		this.publisher = publisher;
 		this.publicationDate = publicationDate;
-		// Add authors
-		//this.authors.add(e)
+		// If there are multiple authors
+		if (authorString.contains(",")){
+			String[] words = authorString.split(",");
+			for (int i = 0; i < words.length; i++) {
+				this.authors.add(new Author(words[i]));
+			}
+		} else {
+			// If only a single author
+			this.authors.add(new Author(authorString));
+		}
 		
 		this.numberOfCopies = numberOfCopies;
 		this.articles = new HashSet<Article>();
