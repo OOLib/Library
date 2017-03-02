@@ -42,10 +42,10 @@ public class Console {
 					library.searchLibrary(in);
 					break;
 				case 4:
-					library.borrowDocument();
+					library.borrowDocument(in);
 					break;
 				case 5:
-					library.returnDocument();
+					library.returnDocument(in);
 					break;
 				case 6:
 					library.displayLoans();

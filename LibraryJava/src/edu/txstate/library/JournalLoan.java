@@ -11,10 +11,10 @@ public class JournalLoan extends Loan {
 	/** 
 	* This is a constructor function.
 	*/
-	JournalLoan(Journal journal, Account account) {
+	JournalLoan(Journal journal, Account account, int duration) {
 		this.document = journal;
 		this.account = account;
-		this.duration = 0;
+		this.duration = duration;
 	}
 	
 	/** 

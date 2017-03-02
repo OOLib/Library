@@ -11,7 +11,6 @@ public class Journal extends Document {
 
 	private int volume;
 	private int issueNumber;
-	private int numCopies;
 	private Set<Article> articles;
 	private JournalLoan journalLoans;
 	
@@ -19,14 +18,15 @@ public class Journal extends Document {
 	/** 
 	* This is a constructor function.
 	*/
-	Journal(String title, String publicationDate, int volume, int number, String publisher, String articleString )
+	Journal(String title, String publicationDate, int volume, int issueNumber, String publisher, String articleString, int numberOfCopies)
 	{
 		this.title = title;
 		this.publicationDate = publicationDate;
 		this.volume = volume;
-		this.issueNumber = number;
+		this.issueNumber = issueNumber;
 		this.publisher = publisher;
 		this.articles = new HashSet<Article>();
+		this.numberOfCopies = numberOfCopies;
 
 		// If there are multiple articles
 		if (articleString.contains(",")){
@@ -89,9 +89,9 @@ public class Journal extends Document {
 	* This function returns the number of copies of the journal. 
 	* @return number of copies
 	*/
-	public int getNumCopies() {
+	public int getNumberOfCopies() {
 		// begin-user-code
-		return numCopies;
+		return numberOfCopies;
 		// end-user-code
 	}
 
@@ -99,9 +99,9 @@ public class Journal extends Document {
 	* This function sets the number of copies of the journal.
 	* @param number of copies
 	*/
-	public void setNumCopies(int numCopies) {
+	public void setNumberOfCopies(int numberOfCopies) {
 		// begin-user-code
-		this.numCopies = numCopies;
+		this.numberOfCopies = numberOfCopies;
 		// end-user-code
 	}
 	

@@ -8,7 +8,7 @@ import java.util.Set;
  */
 public class ConferenceProceeding extends Document {
 
-	private int numCopies;
+	private int numberOfCopies;
 	private Set<Article> articles;
 	private ConferenceProceedingLoan conferenceProceedingLoan;
 	private String conferenceLocation;
@@ -17,8 +17,8 @@ public class ConferenceProceeding extends Document {
 	/** 
 	* This is a constructor function.
 	*/
-	ConferenceProceeding(int numCopies, Set<Article> articles, ConferenceProceedingLoan conferenceProceedingLoan, String conferenceLocation, String conferenceDate) {
-		this.numCopies = numCopies;
+	ConferenceProceeding(int numberOfCopies, Set<Article> articles, ConferenceProceedingLoan conferenceProceedingLoan, String conferenceLocation, String conferenceDate) {
+		this.numberOfCopies = numberOfCopies;
 		this.articles = articles;
 		this.conferenceProceedingLoan = conferenceProceedingLoan;
 		this.conferenceLocation = conferenceLocation;
@@ -28,7 +28,7 @@ public class ConferenceProceeding extends Document {
 	* This is a default constructor function.
 	*/	
 	ConferenceProceeding() {
-		this.numCopies = 0;
+		this.numberOfCopies = 0;
 		this.articles = null;
 		this.conferenceProceedingLoan = null;
 		this.conferenceLocation = "";
@@ -40,7 +40,7 @@ public class ConferenceProceeding extends Document {
 	*/
 	public int getNumCopies() {
 		// begin-user-code
-		return numCopies;
+		return numberOfCopies;
 		// end-user-code
 	}
 
@@ -50,7 +50,7 @@ public class ConferenceProceeding extends Document {
 	*/
 	public void setNumCopies(int numCopies) {
 		// begin-user-code
-		this.numCopies = numCopies;
+		this.numberOfCopies = numCopies;
 		// end-user-code
 	}
 	

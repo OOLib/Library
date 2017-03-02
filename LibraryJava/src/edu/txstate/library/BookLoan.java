@@ -9,10 +9,10 @@ public class BookLoan extends Loan {
 	/** 
 	* This is a constructor function.
 	*/
-	BookLoan(Book book, Account account) {
+	BookLoan(Book book, Account account, int duration) {
 		this.document = book;
 		this.account = account;
-		this.duration = 0;
+		this.duration = duration;
 	}
 	
 	/** 

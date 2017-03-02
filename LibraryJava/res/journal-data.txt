@@ -1,5 +1,5 @@
-Foundations in Machine Learning	01-22-2014	11	12	IEEE Society	e1.9.10
-ACM Computing Survey	10-12-2013	10	11	CACM	b1.7.8
-Molecular Systems Biology	10-12-2009	10	11	Springer Verlag	n1.1.7
-EMERGING TRENDS in IOT	08-19-2014	10	11	IEEE Computer	a2.2.3,a3.3.4,a1.1.2
-COMMON FRAMEWORK	09-20-2014	10	11	Elsevier	c1.5.6
+Foundations in Machine Learning	01-22-2014	11	12	IEEE Society	e1.9.10	1
+ACM Computing Survey	10-12-2013	10	11	CACM	b1.7.8	2
+Molecular Systems Biology	10-12-2009	10	11	Springer Verlag	n1.1.7	3
+EMERGING TRENDS in IOT	08-19-2014	10	11	IEEE Computer	a2.2.3,a3.3.4,a1.1.2	4
+COMMON FRAMEWORK	09-20-2014	10	11	Elsevier	c1.5.6	5

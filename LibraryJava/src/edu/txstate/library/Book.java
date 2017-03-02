@@ -9,17 +9,16 @@ public class Book extends Document {
 
 	private boolean isReserved;
 	private String isbn;
-	private int numCopies;
 	
 	/** 
 	* This is a constructor function.
 	*/
-	Book(String title, String publisher, String publicationDate, String isbn, int numCopies, String authorString, boolean isReserved){
+	Book(String title, String publisher, String publicationDate, String isbn, int numberOfCopies, String authorString, boolean isReserved){
 		this.title = title;
 		this.publisher = publisher;
 		this.publicationDate = publicationDate;
 		this.isbn = isbn;
-		this.numCopies = numCopies;
+		this.numberOfCopies = numberOfCopies;
 		this.isReserved = isReserved;
 		
 		// If there are multiple authors
@@ -40,7 +39,7 @@ public class Book extends Document {
 	Book(){
 		this.isReserved = false;
 		this.isbn = "";
-		this.numCopies = 0;
+		this.numberOfCopies = 0;
 		
 	}
 
@@ -74,7 +73,6 @@ public class Book extends Document {
 
 	/** 
 	* @param isbn the isbnNumber to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setIsbn(String isbn) {
 		// begin-user-code
@@ -86,19 +84,19 @@ public class Book extends Document {
 	* @return the numCopies
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public int getNumCopies() {
+	public int getNumberOfCopies() {
 		// begin-user-code
-		return numCopies;
+		return numberOfCopies;
 		// end-user-code
 	}
 
 	/** 
-	* @param numCopies the numCopies to set
+	* @param numberOfCopies the numCopies to set
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	public void setNumCopies(int numCopies) {
+	public void setNumberOfCopies(int numberOfCopies) {
 		// begin-user-code
-		this.numCopies = numCopies;
+		this.numberOfCopies = numberOfCopies;
 		// end-user-code
 	}
 	
@@ -106,7 +104,7 @@ public class Book extends Document {
 	{
 		String a = authors.toString();
 		return "Title: " + title + "\nPublisher: " + publisher + "\nPublication Date: " + publicationDate 
-				+ "\nISBN:  " + isbn + "\nCopies:" + numCopies +  "\nAuthors: " + a;
+				+ "\nISBN:  " + isbn + "\nCopies:" + numberOfCopies +  "\nAuthors: " + a;
 	}
 	
 }

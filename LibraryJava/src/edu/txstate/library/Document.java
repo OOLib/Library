@@ -13,6 +13,7 @@ public abstract class Document {
 	protected Set<Author> authors;
 	protected String publisher;
 	protected String publicationDate;
+	protected int numberOfCopies;
 
 	
 	/** 
@@ -104,5 +105,13 @@ public abstract class Document {
 	public int hashCode()
 	{
 		return title.hashCode();
+	}
+	
+	public int getNumberOfCopies() {
+		return numberOfCopies;
+	}
+	
+	public void setNumberOfCopies(int numberOfCopies) {
+		this.numberOfCopies = numberOfCopies;
 	}
 }

@@ -143,7 +143,7 @@ public class Library {
 			String[] words = line.split("\t");
 			
 			// Add journal to set
-			documents.add(new Journal(words[0], words[1], Integer.parseInt(words[2]), Integer.parseInt(words[3]), words[4], words[5]));
+			documents.add(new Journal(words[0], words[1], Integer.parseInt(words[2]), Integer.parseInt(words[3]), words[4], words[5], Integer.parseInt(words[6])));
 		}
 		// TEST - display the set
 		/*
@@ -335,8 +335,11 @@ public class Library {
 			System.out.println("Enter the articles, seperated by a comma: ");
 			jWords[5] = in.nextLine();
 			
+			System.out.println("Enter the number of copies");
+			jWords[6] = in.nextLine();
+			
 			try{
-				documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[2]), Integer.parseInt(jWords[3]), jWords[4], jWords[5]));
+				documents.add(new Journal(jWords[0], jWords[1], Integer.parseInt(jWords[2]), Integer.parseInt(jWords[3]), jWords[4], jWords[5], Integer.parseInt(jWords[6])));
 			}catch(NumberFormatException e) {
 				System.out.println("Error adding journal. Volume and Issue numbers must be integers. aborting insertion ");
 				System.out.println(" "); // Print an empty line for formatting
@@ -425,17 +428,49 @@ public class Library {
 	/** 
 	* This function allows the user to borrow a document.
 	*/
-	public void borrowDocument() {
-		// TODO Auto-generated method stub
-
+	public void borrowDocument(Scanner in) {
+		// TODO Add commented functionality
+		// Search for document
+		// Search for account (based on id)
+		// Search for document
+		// Enter duration
+		// Check account max loan duration and max loan amount
+		//--------------------------------
+		
+		// Test data
+		Document document = new Book("Database Systems","CRC Press","10/10/2013","1111969604",5,"Shamkant B. Navathe,Ramez Elmasri",false);
+		Account account =  new StudentAccount(6,"Hannah","STUDENT");
+		int duration = 12;
+		
+		// Check if any copies available for checkout
+		if (document.getNumberOfCopies() == 0) {
+			System.out.println("No copies available for borrowing. Aborting checkout.");
+			return;
+		}
+		// Add new loan
+		if (document instanceof Book) {
+			loans.add(new BookLoan((Book)document, account, duration));
+		} else if (document instanceof Journal) {
+			loans.add(new JournalLoan((Journal)document, account, duration));
+		} else if (document instanceof ConferenceProceeding) {
+			loans.add(new ConferenceProceedingLoan((ConferenceProceeding)document, account, duration));
+		}
+		// Decrease number of copies for document
+		document.setNumberOfCopies(document.getNumberOfCopies() - 1);
+		
+		// Display success message
+		System.out.println("Document successfully checked out.");
 	}
 	
 	/** 
 	* This function allows the user to return a document.
 	*/
-	public void returnDocument() {
-		// TODO Auto-generated method stub
-
+	public void returnDocument(Scanner in) {
+		// TODO Add commented functionality
+		// Prompt user to enter loan information
+		// Search for loan
+		// Remove loan based on document and account
+		// Increase number of copies for document
 	}
 
 	/** 
@@ -445,7 +480,7 @@ public class Library {
 		// TODO Auto-generated method stub
 		
 		//TEST
-		loans.add(new BookLoan(new Book(), new StudentAccount()));
+		//loans.add(new BookLoan(new Book(), new StudentAccount(), 12));
 		
 		// Check if any loans exist
 		if(loans.isEmpty()) {
@@ -457,9 +492,6 @@ public class Library {
 				System.out.println("Duration" + "\t" + loan.getDuration());
 			}
 		}
-		
-		
-
 	}
 
 	/** 
@@ -487,7 +519,7 @@ public class Library {
 		for (Document document : documents) {
 			if (document instanceof Book) {
 				Book book = (Book) document;
-				outFile.print(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getPublicationDate() + "\t" + book.getIsbn() + "\t" + book.getNumCopies() + "\t");
+				outFile.print(book.getTitle() + "\t" + book.getPublisher() + "\t" + book.getPublicationDate() + "\t" + book.getIsbn() + "\t" + book.getNumberOfCopies() + "\t");
 			
 				String authorString = new String();
 				for (Author author : book.authors) {
@@ -532,6 +564,7 @@ public class Library {
 				// remove last comma
 				articleString = articleString.substring(0, articleString.length()-1);
 				outFile.print(articleString);
+				outFile.print("\t" + journal.getNumberOfCopies());
 				// add new line
 				outFile.print("\n");	
 			}
