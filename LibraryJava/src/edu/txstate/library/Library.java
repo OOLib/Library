@@ -79,11 +79,6 @@ public class Library {
 				accounts.add(new LibrarianAccount(Integer.parseInt(words[0]), words[1], words[2]));
 			}
 		}
-		// TEST - display the set
-		/*
-		for (Account account : accounts) {
-			System.out.println(account.getId() + "\t" + account.getName() + "\t" + account.getType());
-		}*/
 		inFile.close(); //Close file
 
 		//-------------------------
@@ -111,14 +106,7 @@ public class Library {
 			// Add book to set
 			documents.add(new Book(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], false));
 		}
-		// TEST - display the set
-		/*
-		for (Document document : documents) {
-			if (document instanceof Book) {
-				Book book = (Book) document;
-				System.out.println(book.getTitle() + "\t" + book.getIsbn());
-			}
-		}*/
+		
 		inFile.close();
 
 		//-------------------------
@@ -145,21 +133,13 @@ public class Library {
 			// Add journal to set
 			documents.add(new Journal(words[0], words[1], Integer.parseInt(words[2]), Integer.parseInt(words[3]), words[4], words[5], Integer.parseInt(words[6])));
 		}
-		// TEST - display the set
-		/*
-		for (Document document : documents) {
-			if (document instanceof Journal) {
-				Journal journal = (Journal) document;
-				System.out.println(journal.getTitle() + "\t" + journal.getVolume());
-			}
-		}*/
 		
 		inFile.close();
 		//-------------------------
 		// Read from conferenceProceeding file
 		//-------------------------
-		
 		// String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
+		
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -173,12 +153,14 @@ public class Library {
 		}
 
 		//Read from files
+		System.out.println("Done");
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
 			
 			// Add conference proceeding to set
-			documents.add(new ConferenceProceeding(words[0], words[1], words[2], words[3], Integer.parseInt(words[0]), words[4], words[5], words[6]));
+			System.out.println(words[0]);
+			documents.add(new ConferenceProceeding(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], words[6], words[7]));
 		}
 		// TEST - display the set
 		for (Document document : documents) {

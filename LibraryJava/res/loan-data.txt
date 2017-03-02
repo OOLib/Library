@@ -1,1 +1,1 @@
-0		12	BOOK0		3	BOOK
+0		12	BOOK
