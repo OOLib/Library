@@ -389,9 +389,9 @@ public class Library {
 	}
 
 	/** 
-	* This function allows the user to search for a document based on title or author.
+	* This function allows the user to search for a document based on title.
 	*/
-	public void searchDocuments(Scanner in) {
+	public Document searchDocuments(Scanner in) {
 		
 		System.out.println("Enter the title of a document to search for");
 		String query = in.nextLine();
@@ -403,13 +403,14 @@ public class Library {
 			for(Document doc : documents)
 			{
 				if(doc.equals(search))
-					doc.displayDocument();
+					return doc;
 			}
 		
 		}
 		else
 			System.out.println("Document was not found in the system.");
-		// TODO Figure out why case sensitive
+			Document dummy = new Book();
+			return dummy;
 	}
 
 	/** 
@@ -431,7 +432,9 @@ public class Library {
 		switch (choice) {
 		
 		case 1:
-			searchDocuments(in);
+			Document doc = searchDocuments(in);
+			if(doc.getNumberOfCopies() != 0)
+				doc.displayDocument();
 			break;
 		
 		case 2:
@@ -444,6 +447,9 @@ public class Library {
 		}
 	}
 	
+	/** 
+	* This function allows the user to search for a document based on author.
+	*/
 	public void searchAuthor(Scanner in)
 	{
 		System.out.println("Enter the name of an author to search for");
@@ -454,7 +460,7 @@ public class Library {
 			if(doc.authors.contains(authorQuery))
 				System.out.println(doc);
 		}
-		// TODO not entirely functioning yet. Case Sensitive
+
 	}
 
 	/** 
