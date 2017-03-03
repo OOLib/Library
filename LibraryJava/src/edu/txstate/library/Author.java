@@ -62,6 +62,7 @@ public class Author {
 	
 	public int hashCode()
 	{
-		return name.hashCode();
+		String lowerName = name.toLowerCase();
+		return lowerName.hashCode();
 	}
 }

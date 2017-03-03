@@ -104,7 +104,8 @@ public abstract class Document {
 	
 	public int hashCode()
 	{
-		return title.hashCode();
+		String lowerTitle = title.toLowerCase();
+		return lowerTitle.hashCode();
 	}
 	
 	public int getNumberOfCopies() {
@@ -113,5 +114,10 @@ public abstract class Document {
 	
 	public void setNumberOfCopies(int numberOfCopies) {
 		this.numberOfCopies = numberOfCopies;
+	}
+	
+	public void displayDocument()
+	{
+		System.out.println(this);
 	}
 }

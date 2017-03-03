@@ -403,7 +403,7 @@ public class Library {
 			for(Document doc : documents)
 			{
 				if(doc.equals(search))
-					System.out.println(doc.toString());
+					doc.displayDocument();
 			}
 		
 		}
