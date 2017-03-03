@@ -364,7 +364,7 @@ public class Library {
 			System.out.println("Enter the Publisher: ");
 			jWords[4] = in.nextLine();
 			
-			System.out.println("Enter the articles, seperated by a comma: ");
+			System.out.println("Enter the article(s). Articles are seperated by a comma, and their fields by periods: ");
 			jWords[5] = in.nextLine();
 			
 			System.out.println("Enter the number of copies");
@@ -433,7 +433,7 @@ public class Library {
 		
 		case 1:
 			Document doc = searchDocuments(in);
-			if(doc.getNumberOfCopies() != 0)
+			if(doc.getNumberOfCopies() != 0) // if document was found
 				doc.displayDocument();
 			break;
 		
