@@ -97,4 +97,25 @@ public abstract class Account {
 		// TODO Auto-generated method stub
 
 	}
+	
+	public boolean equals(Object o)
+	{
+		if(o == null)
+			return false;
+		
+		if(!(o instanceof Account))
+			return false;
+		
+		Account oAccount = (Account) o;
+		
+		if(this.id == oAccount.id)
+			return true;
+		else
+			return false;
+	}
+	
+	public int hashCode()
+	{
+		return id;
+	}
 }
