@@ -11,6 +11,7 @@ public abstract class Loan {
 	protected Document document;
 	protected int duration;
 	
+	
 	/**
 	* This function returns the duration of the loan. 
 	* @return duration of loan
@@ -65,10 +66,30 @@ public abstract class Loan {
 	* This function sets the document of the loan. 
 	* @param document of the loan
 	*/
-	public void setDuration(Document document) {
+	public void setDocument(Document document) {
 		// begin-user-code
 		this.document = document;
 		// end-user-code
 	}
 	
+	public boolean equals(Object o)
+	{
+		if (o == null)
+			return false;
+		
+		if(!(o instanceof Loan))
+			return false;
+		
+		Loan oLoan = (Loan) o;
+		
+		if(this.account.equals(oLoan.account) && this.document.equals(oLoan.document))
+			return true;
+		else
+			return false;
+	}
+	
+	public int hashCode()
+	{
+		return account.hashCode() + document.hashCode();
+	}
 }

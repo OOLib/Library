@@ -509,6 +509,51 @@ public class Library {
 		// Search for loan
 		// Remove loan based on document and account
 		// Increase number of copies for document
+		
+		String documentName;
+		System.out.println("Enter the ID of the account used to take out the loan");
+		try
+		{
+			// Book and Student account classes used for convenience in search. Any account/document type would work.
+			int accountId = Integer.parseInt(in.nextLine());
+			StudentAccount tempAccount = new StudentAccount();
+			tempAccount.setId(accountId);
+			
+			System.out.println("Now enter the full title of the document");
+			documentName = in.nextLine();
+			
+			// Declare temporary objects to conduct the search.
+			Book tempDocument = new Book();
+			tempDocument.setTitle(documentName);
+			
+			BookLoan tempLoan = new BookLoan();
+			tempLoan.setAccount(tempAccount);
+			tempLoan.setDocument(tempDocument);
+			
+			// conduct the search
+			if(loans.contains(tempLoan))
+			{
+				for(Loan l : loans)
+				{
+					if(l.equals(tempLoan))
+					{
+						Document doc = l.getDocument();
+						doc.setNumberOfCopies(doc.getNumberOfCopies() + 1);
+						loans.remove(l);
+						System.out.println("Document successfully returned.");
+						return;
+					}
+				}
+			}
+			else
+				System.out.println("Loan was not found. Document was not returned.");
+			
+			
+		}catch(NumberFormatException e)
+		{
+			System.out.println("Error: Must enter an integer for ID. aborting document return.");
+		}
+		
 	}
 
 	/** 
@@ -531,6 +576,7 @@ public class Library {
 			}
 		}
 	}
+	
 
 	/** 
 	* This function saves the state of the library and exits the system.

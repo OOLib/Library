@@ -88,4 +88,10 @@ public class Article {
 		else
 			return false;
 	}
+	
+	public int hashCode()
+	{
+		String lowerTitle = title.toLowerCase();
+		return lowerTitle.hashCode();
+	}
 }

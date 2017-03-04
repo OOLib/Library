@@ -33,6 +33,14 @@ public abstract class Account {
 	public int getId() {
 		return id;
 	}
+	
+	/**
+	 * This function sets the user's account ID
+	 */
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 
 	/** 
 	* This function returns the user's ID.
