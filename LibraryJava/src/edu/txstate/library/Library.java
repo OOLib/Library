@@ -362,7 +362,7 @@ public class Library {
 			System.out.println("Enter the issue number: ");
 			jWords[3] = in.nextLine();
 			
-			System.out.println("Enter the Publisher: ");
+			System.out.println("Enter the publisher: ");
 			jWords[4] = in.nextLine();
 			
 			System.out.println("Enter the article(s) in the format \"<title>.<firstPage>.<lastPage>\".Articles are seperated by a comma.");
@@ -380,6 +380,39 @@ public class Library {
 			break;
 			
 		case 3:
+			String[] cWords = new String[8];
+			System.out.println("Enter the conference title: ");
+			cWords[0] = in.nextLine();
+			
+			System.out.println("Enter the author. For a list of authors, seperate by a comma: ");
+			cWords[1] = in.nextLine();
+			
+			System.out.println("Enter the publisher: ");
+			cWords[2] = in.nextLine();
+			
+			System.out.println("Enter the date of publication: ");
+			cWords[3] = in.nextLine();
+			
+			System.out.println("Enter the number of copies: ");
+			cWords[4] = in.nextLine();
+			
+			System.out.println("Enter the article(s) in the format \"<title>.<firstPage>.<lastPage>\".Articles are seperated by a comma.");
+			cWords[5] = in.nextLine();
+			
+			System.out.println("Enter the location of the conference: ");
+			cWords[6] = in.nextLine();
+			
+			System.out.println("Enter the date of the conference: ");
+			cWords[7] = in.nextLine();
+			
+			try {
+				documents.add(new ConferenceProceeding(cWords[0], cWords[1], cWords[2], cWords[3], Integer.parseInt(cWords[4]), cWords[5], cWords[6], cWords[7]));
+			
+			}catch(NumberFormatException e)
+			{
+				System.out.println("Error: Number of copies must be an integer. Aborting insertion");
+				System.out.println(" "); // empty line for formatting
+			}
 			break;
 			
 		default: 
