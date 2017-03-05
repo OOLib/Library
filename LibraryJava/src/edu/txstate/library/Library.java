@@ -13,7 +13,6 @@ import java.util.Set;
  */
 public class Library {
 
-	private int numDocsBorrowed;
 	private Set<Loan> loans;
 	private Set<Document> documents;
 	private Set<Account> accounts;
@@ -153,22 +152,20 @@ public class Library {
 		}
 
 		//Read from files
-		System.out.println("Done");
 		while (inFile.hasNext()) {
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
 			
 			// Add conference proceeding to set
-			System.out.println(words[0]);
 			documents.add(new ConferenceProceeding(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], words[6], words[7]));
 		}
+		/*
 		// TEST - display the set
 		for (Document document : documents) {
 			if (document instanceof ConferenceProceeding) {
 				ConferenceProceeding conferenceProceeding = (ConferenceProceeding) document;
-				System.out.println(conferenceProceeding.getTitle());
 			}
-		}
+		} */
 		
 		inFile.close();
 		
@@ -467,18 +464,62 @@ public class Library {
 	* This function allows the user to borrow a document.
 	*/
 	public void borrowDocument(Scanner in) {
-		// TODO Add commented functionality
-		// Search for document
-		// Search for account (based on id)
-		// Search for document
-		// Enter duration
-		// Check account max loan duration and max loan amount
-		//--------------------------------
+		// Parameters for loan
+		Document document = null;
+		Account account = null;
+		int duration = 0;
 		
-		// Test data
-		Document document = new Book("Database Systems","CRC Press","10/10/2013","1111969604",5,"Shamkant B. Navathe,Ramez Elmasri",false);
-		Account account =  new StudentAccount(6,"Hannah","STUDENT");
-		int duration = 12;
+		// Temporary objects for search
+		String documentName;
+		int accountId;
+		StudentAccount tempAccount = new StudentAccount();
+		Book tempDocument = new Book();
+		
+		try
+		{
+			// Book and Student account classes used for convenience in search. Any account/document type would work.
+			System.out.println("Enter the ID of the user borrowing the document");
+			accountId = Integer.parseInt(in.nextLine());
+			tempAccount.setId(accountId);
+			
+			// Search for Account
+			if(accounts.contains(tempAccount)) {
+				for(Account a: accounts)
+				{
+					if(a.equals(tempAccount))
+					{
+						account = a;
+					}
+				}
+			}
+			else {
+				System.out.println("User was not found. Aborting checkout.");
+				return;
+			}			
+			
+			System.out.println("Enter the title of the document");
+			documentName = in.nextLine();
+			tempDocument.setTitle(documentName);
+			
+			// Search for document
+			if(documents.contains(tempDocument)) {
+				for(Document d : documents)
+				{
+					if(d.equals(tempDocument))
+					{
+						document = d;
+					}
+				}
+			}
+			else {
+				System.out.println("Document was not found. Aborting checkout.");
+				return;
+			}	
+			
+		}catch(NumberFormatException e)
+		{
+			System.out.println("Error: Must enter an integer for ID. aborting document return.");
+		}
 		
 		// Check if any copies available for checkout
 		if (document.getNumberOfCopies() == 0) {
@@ -511,7 +552,7 @@ public class Library {
 		// Increase number of copies for document
 		
 		String documentName;
-		System.out.println("Enter the ID of the account used to take out the loan");
+		System.out.println("Enter the ID of the user used to take out the loan");
 		try
 		{
 			// Book and Student account classes used for convenience in search. Any account/document type would work.
