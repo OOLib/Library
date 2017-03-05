@@ -12,8 +12,6 @@ public abstract class Account {
 	protected int id;
 	protected String name;
 	protected String type;
-	protected int numDocsBorrowed;
-	protected Set<Loan> loans;
 
 	/** 
 	* This is a default constructor function.
@@ -22,8 +20,6 @@ public abstract class Account {
 		this.id = 0;
 		this.name = "";
 		this.type = "";
-		this.numDocsBorrowed = 0;
-		this.loans = new HashSet<Loan>();
 	}
 
 	/** 
@@ -57,56 +53,12 @@ public abstract class Account {
 	public String getType() {
 		return type;
 	}
-
 	/**
-	* This function returns the number of documents borrowed.
-	* @return the numDocsBorrowed
-	*/
-	public int getNumDocsBorrowed() {
-		return numDocsBorrowed;
-	}
-
-	/**
-	* This function sets the number of documents borrowed. 
-	* @param numDocsBorrowed the numDocsBorrowed to set
-	*/
-	public void setNumDocsBorrowed(int numDocsBorrowed) {
-		this.numDocsBorrowed = numDocsBorrowed;
-	}
-
-	/**
-	* This function returns all loans for the account.  
-	* @return the loans
-	*/
-	public Set<Loan> getLoans() {
-		return loans;
-	}
-
-	/** 
-	* This function sets the loans.
-	* @param loans the loans to set
-	*/
-	public void setLoans(Set<Loan> loans) {
-		this.loans = loans;
-	}
-
-	/** 
-	* This function adds a loan to the library.
-	*/
-	public void addLoan() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/** 
-	* This function removes a loan from the account.
-	*/
-	public void removeLoan() {
-		// TODO Auto-generated method stub
-
-	}
-	
-	public boolean equals(Object o)
+	 * This function determines whether two objects are equal
+	 * @param loan object that will be compared to the invoking object
+	 * @return true if the object has the same values
+	 */
+	@Override public boolean equals(Object o)
 	{
 		if(o == null)
 			return false;
@@ -121,9 +73,20 @@ public abstract class Account {
 		else
 			return false;
 	}
-	
-	public int hashCode()
+	/**
+	 * This function determines the unique hash code for the object
+	 * @return hash
+	 */
+	@Override public int hashCode()
 	{
 		return id;
+	}
+	/**
+	 * This function displays the object's values as one string
+	 * @return string of all values
+	 */
+	@Override public String toString()
+	{
+		return "ID: " + id + "\nName: " + name + "\nType: " + type;
 	}
 }

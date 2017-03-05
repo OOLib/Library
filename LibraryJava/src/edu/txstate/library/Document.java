@@ -83,8 +83,33 @@ public abstract class Document {
 		this.publisher = publisher;
 		// end-user-code
 	}
-	
-	public boolean equals(Object o)
+	/**
+	 * This function returns the number of copies
+	 * @return number of copies
+	 */
+	public int getNumberOfCopies() {
+		return numberOfCopies;
+	}
+	/**
+	 * This function sets the number of copies
+	 * @param numberOfCopies
+	 */
+	public void setNumberOfCopies(int numberOfCopies) {
+		this.numberOfCopies = numberOfCopies;
+	}
+	/**
+	 * This function displays the document
+	 */
+	public void displayDocument()
+	{
+		System.out.println(this);
+	}
+	/**
+	 * This function determines whether two objects are equal
+	 * @param loan object that will be compared to the invoking object
+	 * @return true if the object has the same values
+	 */
+	@Override public boolean equals(Object o)
 	{
 		if (o == null)
 			return false;
@@ -101,23 +126,21 @@ public abstract class Document {
 		else
 			return false;
 	}
-	
-	public int hashCode()
+	/**
+	 * This function determines the unique hash code for the object
+	 * @return hash
+	 */
+	@Override public int hashCode()
 	{
 		String lowerTitle = title.toLowerCase();
 		return lowerTitle.hashCode();
 	}
-	
-	public int getNumberOfCopies() {
-		return numberOfCopies;
-	}
-	
-	public void setNumberOfCopies(int numberOfCopies) {
-		this.numberOfCopies = numberOfCopies;
-	}
-	
-	public void displayDocument()
+	/**
+	 * This function displays the object's values as one string
+	 * @return string of all values
+	 */
+	@Override public String toString()
 	{
-		System.out.println(this);
+		return "Title: " + title + "\nPublisher: " + publisher + "\nPublication Date: " + publicationDate;
 	}
 }

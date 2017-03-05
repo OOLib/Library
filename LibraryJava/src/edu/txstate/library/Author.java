@@ -37,12 +37,21 @@ public class Author {
 		this.name = name;
 	}
 	
-	public String toString()
+	/**
+	 * This function displays the object's values as one string
+	 * @return string of all values
+	 */
+	@Override public String toString()
 	{
 		return name;
 	}
 	
-	public boolean equals(Object o)
+	/**
+	 * This function determines whether two objects are equal
+	 * @param loan object that will be compared to the invoking object
+	 * @return true if the object has the same values
+	 */
+	@Override public boolean equals(Object o)
 	{
 		if (o == null)
 			return false;
@@ -60,7 +69,11 @@ public class Author {
 			return false;
 	}
 	
-	public int hashCode()
+	/**
+	 * This function determines the unique hash code for the object
+	 * @return hash
+	 */
+	@Override public int hashCode()
 	{
 		String lowerName = name.toLowerCase();
 		return lowerName.hashCode();

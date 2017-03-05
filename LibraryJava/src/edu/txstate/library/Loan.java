@@ -72,7 +72,12 @@ public abstract class Loan {
 		// end-user-code
 	}
 	
-	public boolean equals(Object o)
+	/**
+	 * This function determines whether two objects are equal
+	 * @param loan object that will be compared to the invoking object
+	 * @return true if the object has the same values
+	 */
+	@Override public boolean equals(Object o)
 	{
 		if (o == null)
 			return false;
@@ -87,9 +92,20 @@ public abstract class Loan {
 		else
 			return false;
 	}
-	
-	public int hashCode()
+	/**
+	 * This function determines the unique hash code for the object
+	 * @return hash
+	 */
+	@Override public int hashCode()
 	{
 		return account.hashCode() + document.hashCode();
+	}
+	/**
+	 * This function displays the object's values as one string
+	 * @return string of all values
+	 */
+	@Override public String toString()
+	{
+		return "Account: " + account.toString() + "\nDocument: " + document.toString() + "\nDuration: " + duration;
 	}
 }

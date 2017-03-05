@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 /** 
- * This class represents the library system's data, including documents and accounts.
+ * This class represents the library system which handles the storage and modification of data, including documents and accounts.
  * @author Hannah Burzynski, Alexander Wagstaff
  */
 public class Library {
@@ -44,7 +44,6 @@ public class Library {
 		//-------------------------
 		// Read from user file
 		//-------------------------
-		// int id, String name, String type
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -83,8 +82,6 @@ public class Library {
 		//-------------------------
 		// Read from book file
 		//-------------------------
-		// String title, String publisher, String date, String isbn, int copies, String(comma delimited)author
-		
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -111,7 +108,6 @@ public class Library {
 		//-------------------------
 		// Read from journal file
 		//-------------------------
-		// String title, date, volume, issue, publisher, articles, (for each article, in order) (article)firstpage, (article)lastpage
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -137,8 +133,6 @@ public class Library {
 		//-------------------------
 		// Read from conferenceProceeding file
 		//-------------------------
-		// String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
-		
 		try {
 			// If the user has not used the system before, then initialize with some pre-defined data
 			if (!(bookFile.hasNext())){
@@ -159,21 +153,12 @@ public class Library {
 			// Add conference proceeding to set
 			documents.add(new ConferenceProceeding(words[0], words[1], words[2], words[3], Integer.parseInt(words[4]), words[5], words[6], words[7]));
 		}
-		/*
-		// TEST - display the set
-		for (Document document : documents) {
-			if (document instanceof ConferenceProceeding) {
-				ConferenceProceeding conferenceProceeding = (ConferenceProceeding) document;
-			}
-		} */
 		
 		inFile.close();
 		
 		//-------------------------
 		// Read from loan file
 		//-------------------------
-		// account, document, duration
-
 		try {
 			inFile = new Scanner(new FileReader("res/loan-data.txt"));
 		} catch (FileNotFoundException e) {
@@ -182,19 +167,46 @@ public class Library {
 		}
 
 		while (inFile.hasNext()) {
+			Account account = new StudentAccount();
+			Document document = new Book();
 			// Divide line into parameters
 			String line = inFile.nextLine();
 			String[] words = line.split("\t");
 			
-			// TODO implement commented functionality
-			// search for account based on id
-			// search for document based on title
-			//---------------------------------------
+			// Temporary objects for search
+			String documentName;
+			int accountId;
+			StudentAccount tempAccount = new StudentAccount();
+			Book tempDocument = new Book();
+
+			accountId = Integer.parseInt(words[0]);
+			tempAccount.setId(accountId);
 			
-			// TEST
-			Account account = new StudentAccount();
-			Document document = new Book();
-			//-----
+			// Search for Account
+			if(accounts.contains(tempAccount)) {
+				for(Account a: accounts)
+				{
+					if(a.equals(tempAccount))
+					{
+						account = a;
+					}
+				}
+			}
+
+			documentName = words[1];
+			tempDocument.setTitle(documentName);
+			
+			// Search for Document
+			if(documents.contains(tempDocument)) {
+				for(Document d : documents)
+				{
+					if(d.equals(tempDocument))
+					{
+						document = d;
+					}
+				}
+			}
+
 			int duration = Integer.parseInt(words[2]);
 
 			// Add book loan
@@ -233,13 +245,11 @@ public class Library {
 	* This function adds a new user to the library system.
 	*/
 	public void addNewUser(Scanner in) {
-		
-		
-		
+
 		System.out.println("Select the type of User to add");
-		System.out.println("1. Add a new User Account");
-		System.out.println("2. Add a new faculty Account");
-		System.out.println("3. Add a new Librarian Account");
+		System.out.println("1. Add a student");
+		System.out.println("2. Add a faculty");
+		System.out.println("3. Add a librarian");
 		
 		int choice = 0;
 		
@@ -294,13 +304,10 @@ public class Library {
 	*/
 	public void addNewDocument(Scanner in) {
 
-
-		
 		System.out.println("Select the Type of document to add");
 		System.out.println("1. Add a book");
-		System.out.println("2. Add an article");
-		System.out.println("3. Add a journal");
-		System.out.println("4. Add a conference proceeding");
+		System.out.println("2. Add a journal");
+		System.out.println("3. Add a conference proceeding");
 		
 		int choice = 0;
 		
@@ -342,9 +349,6 @@ public class Library {
 			break;
 			
 		case 2:
-			break;
-			
-		case 3:
 			String[] jWords = new String[6];
 			System.out.println("Enter the journal title: ");
 			jWords[0] = in.nextLine();
@@ -361,7 +365,7 @@ public class Library {
 			System.out.println("Enter the Publisher: ");
 			jWords[4] = in.nextLine();
 			
-			System.out.println("Enter the article(s). Articles are seperated by a comma, and their fields by periods: ");
+			System.out.println("Enter the article(s) in the format \"<title>.<firstPage>.<lastPage>\".Articles are seperated by a comma.");
 			jWords[5] = in.nextLine();
 			
 			System.out.println("Enter the number of copies");
@@ -375,7 +379,7 @@ public class Library {
 			}
 			break;
 			
-		case 4:
+		case 3:
 			break;
 			
 		default: 
@@ -402,7 +406,6 @@ public class Library {
 				if(doc.equals(search))
 					return doc;
 			}
-		
 		}
 		else
 			System.out.println("Document was not found in the system.");
@@ -457,7 +460,6 @@ public class Library {
 			if(doc.authors.contains(authorQuery))
 				System.out.println(doc);
 		}
-
 	}
 
 	/** 
@@ -477,7 +479,6 @@ public class Library {
 		
 		try
 		{
-			// Book and Student account classes used for convenience in search. Any account/document type would work.
 			System.out.println("Enter the ID of the user borrowing the document");
 			accountId = Integer.parseInt(in.nextLine());
 			tempAccount.setId(accountId);
@@ -501,7 +502,7 @@ public class Library {
 			documentName = in.nextLine();
 			tempDocument.setTitle(documentName);
 			
-			// Search for document
+			// Search for Document
 			if(documents.contains(tempDocument)) {
 				for(Document d : documents)
 				{
@@ -514,7 +515,10 @@ public class Library {
 			else {
 				System.out.println("Document was not found. Aborting checkout.");
 				return;
-			}	
+			}
+			
+			System.out.println("Enter the duration of the loan (in months)");
+			duration = Integer.parseInt(in.nextLine());
 			
 		}catch(NumberFormatException e)
 		{
@@ -525,6 +529,29 @@ public class Library {
 		if (document.getNumberOfCopies() == 0) {
 			System.out.println("No copies available for borrowing. Aborting checkout.");
 			return;
+		}
+		
+		// Check max loan duration and max loan amount for faculty and student accounts
+		if (account instanceof StudentAccount) {
+			StudentAccount temp = (StudentAccount) account;
+			if (duration > temp.getMaxLoanDuration()) {
+				System.out.println("Duration cannot be greater than max duration allowed. Aborting checkout.");
+				return;
+			}
+			if (numberOfLoansForUser(temp.getId()) > temp.getMaxBorrowedAmount()) {
+				System.out.println("User has already borrowed the maximum number of documents. Aborting checkout.");
+			}
+		}
+		
+		if (account instanceof FacultyAccount) {
+			FacultyAccount temp = (FacultyAccount) account;
+			if (duration > temp.getMaxLoanDuration()) {
+				System.out.println("Duration cannot be greater than max duration allowed. Aborting checkout.");
+				return;
+			}
+			if (numberOfLoansForUser(temp.getId()) > temp.getMaxBorrowedAmount()) {
+				System.out.println("User has already borrowed the maximum number of documents. Aborting checkout.");
+			}
 		}
 		// Add new loan
 		if (document instanceof Book) {
@@ -545,11 +572,6 @@ public class Library {
 	* This function allows the user to return a document.
 	*/
 	public void returnDocument(Scanner in) {
-		// TODO Add commented functionality
-		// Prompt user to enter loan information
-		// Search for loan
-		// Remove loan based on document and account
-		// Increase number of copies for document
 		
 		String documentName;
 		System.out.println("Enter the ID of the user used to take out the loan");
@@ -601,19 +623,13 @@ public class Library {
 	* This function displays all the loans.
 	*/
 	public void displayLoans() {
-		// TODO Auto-generated method stub
-		
-		//TEST
-		//loans.add(new BookLoan(new Book(), new StudentAccount(), 12));
-		
 		// Check if any loans exist
 		if(loans.isEmpty()) {
 			System.out.println("There are no loans.");
 		} else {
 			for (Loan loan : loans) {
-				System.out.println("Account:" + "\t" + loan.getAccount().getName());
-				System.out.println("Document" + "\t" + loan.getDocument().getTitle());
-				System.out.println("Duration" + "\t" + loan.getDuration());
+				System.out.println(loan.toString());
+				System.out.print("\n\n");
 			}
 		}
 	}
@@ -623,15 +639,11 @@ public class Library {
 	* This function saves the state of the library and exits the system.
 	*/
 	public void save() {
-
-		// TODO Auto-generated method stub
 		
 		PrintWriter outFile = null;
 		//-------------------------
 		// Write to book file
-		//-------------------------
-		// String title, String publisher, String date, String isbn, int copies, String(comma delimited)author
-		
+		//-------------------------		
 		try {
 			outFile = new PrintWriter("res/book-data.txt");
 		} catch (FileNotFoundException e) {
@@ -661,8 +673,6 @@ public class Library {
 		//-------------------------
 		// Write to journal file
 		//-------------------------
-		// String title, date, volume, issue, publisher, articles(template: title.firstPage.LastPage, articles comma-delimited, attributes period-delimited)
-		
 		try {
 			outFile = new PrintWriter("res/journal-data.txt");
 		} catch (FileNotFoundException e) {
@@ -696,9 +706,7 @@ public class Library {
 		
 		//-------------------------
 		// Write to user file
-		//-------------------------
-		// int id, String name, String type
-		
+		//-------------------------		
 		try {
 			outFile = new PrintWriter("res/user-data.txt");
 		} catch (FileNotFoundException e) {
@@ -714,7 +722,6 @@ public class Library {
 		//-------------------------
 		// Write to loan file
 		//-------------------------
-		
 		try {
 			outFile = new PrintWriter("res/loan-data.txt");
 		} catch (FileNotFoundException e) {
@@ -743,9 +750,7 @@ public class Library {
 		
 		//-------------------------
 		// Write to conference proceeding file
-		//-------------------------
-		// String title, String authors, String publisher, String publicationDate, int numberOfCopies, String articleString, String conferenceLocation, String conferenceDate
-		
+		//-------------------------		
 		try {
 			outFile = new PrintWriter("res/conference-proceeding-data.txt");
 		} catch (FileNotFoundException e) {
@@ -788,5 +793,26 @@ public class Library {
 			}
 		}
 		outFile.close();
+	}
+	/**
+	 * This function returns the number of loans for a specific user.
+	 * @param id
+	 * @return number of loans for a specific user
+	 */
+	public int numberOfLoansForUser(int id) {
+		int numberOfLoans = 0;
+		// Create temp account for search
+		StudentAccount tempAccount = new StudentAccount();
+		tempAccount.setId(id);
+		
+		// Total all loans associated with the user
+		for(Loan loan: loans)
+		{
+			if(loan.getAccount().equals(tempAccount))
+			{
+				numberOfLoans++;
+			}
+		}
+		return numberOfLoans;
 	}
 }

@@ -20,7 +20,6 @@ public class FacultyAccount extends Account {
 		this.name = name;
 		// TODO remove type from constructor, always FACULTY type
 		this.type = type;
-		this.loans = new HashSet<Loan>();
 	}
 
 	/** 
@@ -33,26 +32,18 @@ public class FacultyAccount extends Account {
 	}
 
 	/** 
-	* @return the loan
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function returns the maximum loan duration.
+	* @return maximum loan duration
 	*/
-	public Set<Loan> getLoan() {
-		// begin-user-code
-		return loans;
-		// end-user-code
-	}
-
-	/** 
-	* @param loan the loan to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setLoan(Set<Loan> loan) {
-		// begin-user-code
-		this.loans = loan;
-		// end-user-code
+	public int getMaxLoanDuration() {
+		return MAX_BOOK_LOAN_DURATION;
 	}
 	
-	public int getMaxBookLoanDuration() {
-		return MAX_BOOK_LOAN_DURATION;
+	/** 
+	* This function returns the maximum borrowed amount.
+	* @return maximum borrowed amount
+	*/
+	public int getMaxBorrowedAmount() {
+		return MAX_BORROWED_AMOUNT;
 	}
 }
