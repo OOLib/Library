@@ -1,8 +1,5 @@
 package edu.txstate.library;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /** 
  * This abstract class represents an account in the library system.
  * @author Hannah Burzynski, Alexander Wagstaff
@@ -32,6 +29,7 @@ public abstract class Account {
 	
 	/**
 	 * This function sets the user's account ID
+	 * @param id
 	 */
 	public void setId(int id)
 	{

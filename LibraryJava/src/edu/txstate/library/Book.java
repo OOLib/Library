@@ -54,7 +54,6 @@ public class Book extends Document {
 
 	/** 
 	* @param isReserved the isReserved to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setReserved(boolean isReserved) {
 		// begin-user-code
@@ -82,7 +81,6 @@ public class Book extends Document {
 
 	/** 
 	* @return the numCopies
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public int getNumberOfCopies() {
 		// begin-user-code
@@ -92,7 +90,6 @@ public class Book extends Document {
 
 	/** 
 	* @param numberOfCopies the numCopies to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setNumberOfCopies(int numberOfCopies) {
 		// begin-user-code
@@ -100,7 +97,7 @@ public class Book extends Document {
 		// end-user-code
 	}
 	
-	public String toString()
+	@Override public String toString()
 	{
 		String a = authors.toString();
 		return "Title: " + title + "\nPublisher: " + publisher + "\nPublication Date: " + publicationDate 

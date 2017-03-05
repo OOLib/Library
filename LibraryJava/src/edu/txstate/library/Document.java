@@ -26,7 +26,8 @@ public abstract class Document {
 		this.publicationDate = "";
 	}
 	
-	/** 
+	/**
+	* This function returns the title 
 	* @return the title
 	*/
 	public String getTitle() {
@@ -35,9 +36,9 @@ public abstract class Document {
 		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function sets the title 
 	* @param title the title to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setTitle(String title) {
 		// begin-user-code
@@ -45,9 +46,9 @@ public abstract class Document {
 		// end-user-code
 	}	
 
-	/** 
-	* @return the publicationDate
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	/**
+	* This function returns the publication date  
+	* @return the publication date
 	*/
 	public String getPublicationDate() {
 		// begin-user-code
@@ -55,9 +56,9 @@ public abstract class Document {
 		// end-user-code
 	}
 
-	/** 
-	* @param publicationDate the publicationDate to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	/**
+	* This function sets the publication date 
+	* @param publication date
 	*/
 	public void setPublicationDate(String publicationDate) {
 		// begin-user-code
@@ -65,7 +66,8 @@ public abstract class Document {
 		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function returns the publisher 
 	* @return the publisher
 	*/
 	public String getPublisher() {
@@ -74,9 +76,9 @@ public abstract class Document {
 		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function sets the publisher 
 	* @param publisher the publisher to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setPublisher(String publisher) {
 		// begin-user-code

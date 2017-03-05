@@ -2,12 +2,14 @@ CS3354 HOMEWORK 2 - LIBRARY SYSTEM
 By Hannah Burzynski and Alexander Wagstaff
 
 HOW TO USE THE SYSTEM
+-To start the library system from initialization, delete the contents of res/book-data.txt, res/user-data.txt, res/journal-data.txt, res/conference-proceeding-data.txt, and res/loan-data.txt
+
 -To use the library features, start the program and select from the given menu.
 
 -To add data to the files directly, navigate to the res folder. Files marked with “-data” contains the data saved from the library. Files marked with “-initial” are initialization data only used if the library program has not been ran before.
 
 The template for the saved data files are as follows:
-Data is tab delimeted, with authors being comma delimited, and article attributes being period delimited.
+Data is tab delimited, with authors being comma delimited, and article attributes being period delimited.
 
 FILE:	book-data
 HEADER:	title publisher publication_date isbn number_of_copies authors

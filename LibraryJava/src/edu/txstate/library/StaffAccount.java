@@ -1,7 +1,5 @@
 package edu.txstate.library;
 
-import java.util.Set;
-
 /** 
  * This class represents a staff account.
  * @author Hannah Burzynski, Alexander Wagstaff

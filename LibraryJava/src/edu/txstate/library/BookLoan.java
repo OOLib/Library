@@ -25,9 +25,8 @@ public class BookLoan extends Loan {
 	}
 
 	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* This function extends the duration of the loan
+	* @param new duration of the loan
 	*/
 	public void extendDuration(int duration) {
 		this.duration = duration;

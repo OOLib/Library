@@ -66,12 +66,12 @@ public class Article {
 		this.lastPage = lastPage;
 	}
 	
-	public String toString()
+	@Override public String toString()
 	{
 		return "Title: " + title + "\nFirst Page: " + firstPage + "\nLast Page: " + lastPage;
 	}
 	
-	public boolean equals(Object o)
+	@Override public boolean equals(Object o)
 	{
 		if(o == null)
 			return false;
@@ -89,7 +89,11 @@ public class Article {
 			return false;
 	}
 	
-	public int hashCode()
+	/**
+	 * This function displays the object's values as one string
+	 * @return string of all values
+	 */
+	@Override public int hashCode()
 	{
 		String lowerTitle = title.toLowerCase();
 		return lowerTitle.hashCode();

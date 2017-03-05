@@ -61,29 +61,10 @@ public class ConferenceProceeding extends Document {
 		this.conferenceLocation = "";
 		this.conferenceDate = "";
 	}
-	/** 
-	* @return the numCopies
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public int getNumCopies() {
-		// begin-user-code
-		return numberOfCopies;
-		// end-user-code
-	}
-
-	/** 
-	* @param numCopies the numCopies to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	*/
-	public void setNumCopies(int numCopies) {
-		// begin-user-code
-		this.numberOfCopies = numCopies;
-		// end-user-code
-	}
 	
-	/** 
+	/**
+	* This function returns the conference location 
 	* @return the conferenceLocation
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public String getConferenceLocation() {
 		// begin-user-code
@@ -91,9 +72,9 @@ public class ConferenceProceeding extends Document {
 		// end-user-code
 	}
 
-	/** 
+	/**
+	* This function sets the conference location 
 	* @param conferenceLocation the conferenceLocation to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setConferenceLocation(String conferenceLocation) {
 		// begin-user-code
@@ -102,8 +83,8 @@ public class ConferenceProceeding extends Document {
 	}
 	
 	/** 
+	* This function returns the conference date 
 	* @return the conferenceDate
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public String getConferenceDate() {
 		// begin-user-code
@@ -112,8 +93,8 @@ public class ConferenceProceeding extends Document {
 	}
 
 	/** 
+	* This function sets the conference date 
 	* @param conferenceDate the conferenceDate to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setConferenceDate(String conferenceDate) {
 		// begin-user-code

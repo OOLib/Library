@@ -37,8 +37,7 @@ public class Library {
 		try {
 			bookFile = new Scanner(new FileReader("res/book-data.txt"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("book-data.txt not found. Create this file.");
 		}
 		
 		//-------------------------
@@ -52,8 +51,7 @@ public class Library {
 				inFile = new Scanner(new FileReader("res/user-data.txt"));
 			}
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("user-initial.txt or user-data.txt not found. Create this file.");
 		}
 
 		while (inFile.hasNext()) {
@@ -90,8 +88,7 @@ public class Library {
 				inFile = new Scanner(new FileReader("res/book-data.txt"));
 			}
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("book-initial.txt or book-data.txt not found. Create this file.");
 		}
 
 		//Read from files
@@ -116,8 +113,7 @@ public class Library {
 				inFile = new Scanner(new FileReader("res/journal-data.txt"));
 			}
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("journal-initial.txt or journal-data.txt not found. Create this file.");
 		}
 
 		//Read from files
@@ -141,8 +137,7 @@ public class Library {
 				inFile = new Scanner(new FileReader("res/conference-proceeding-data.txt"));
 			}
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("conference-proceeding-initial.txt or conference-proceeding-data.txt not found. Create this file.");
 		}
 
 		//Read from files
@@ -162,8 +157,7 @@ public class Library {
 		try {
 			inFile = new Scanner(new FileReader("res/loan-data.txt"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("loan-data.txt not found. Create this file.");
 		}
 
 		while (inFile.hasNext()) {
@@ -233,12 +227,9 @@ public class Library {
 	/** 
 	* This function notifies a user that they have an overdue book.
 	* @param account
-	* @return
 	*/
 	public void overdueBookReminder(Account account) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		// end-user-code
+		System.out.println("This account an overdue book: " + account.toString());
 	}
 
 	/** 
@@ -295,8 +286,6 @@ public class Library {
 			System.out.println("Not a valid account selection. Aborting entry.");
 			break;
 		}
-		// TODO correct case switch depending on requirements
-
 	}
 
 	/** 
@@ -680,8 +669,7 @@ public class Library {
 		try {
 			outFile = new PrintWriter("res/book-data.txt");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("book-data.txt not found. Create this file.");
 		}
 
 		for (Document document : documents) {
@@ -709,8 +697,7 @@ public class Library {
 		try {
 			outFile = new PrintWriter("res/journal-data.txt");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("journal-data.txt not found. Create this file.");
 		}
 
 		for (Document document : documents) {
@@ -743,8 +730,7 @@ public class Library {
 		try {
 			outFile = new PrintWriter("res/user-data.txt");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("user-data.txt not found. Create this file.");
 		}
 
 		for (Account account : accounts) {
@@ -758,8 +744,7 @@ public class Library {
 		try {
 			outFile = new PrintWriter("res/loan-data.txt");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("loan-data.txt not found. Create this file.");
 		}
 
 		for (Loan loan : loans) {
@@ -787,8 +772,7 @@ public class Library {
 		try {
 			outFile = new PrintWriter("res/conference-proceeding-data.txt");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("conference-proceeding-data.txt not found. Create this file.");
 		}
 
 		for (Document document : documents) {

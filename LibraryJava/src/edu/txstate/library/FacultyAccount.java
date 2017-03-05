@@ -1,8 +1,5 @@
 package edu.txstate.library;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /** 
  * This class represents a faculty account
  * @author Hannah Burzynski, Alexander Wagstaff

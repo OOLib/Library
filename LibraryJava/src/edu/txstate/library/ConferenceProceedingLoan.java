@@ -3,7 +3,6 @@ package edu.txstate.library;
 /** 
  * This class represents a conference proceeding loan.
  * @author Hannah Burzynski, Alexander Wagstaff
- * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
 public class ConferenceProceedingLoan extends Loan {
 
@@ -32,7 +31,6 @@ public class ConferenceProceedingLoan extends Loan {
 	/**
 	* This function returns a conference proceeding.
 	* @return the conferenceProceeding
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public ConferenceProceeding getConferenceProceeding() {
 		// begin-user-code
@@ -43,7 +41,6 @@ public class ConferenceProceedingLoan extends Loan {
 	/**
 	* This function sets a conference proceeding. 
 	* @param conferenceProceeding the conferenceProceeding to set
-	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
 	public void setConferenceProceeding(ConferenceProceeding conferenceProceeding) {
 		// begin-user-code
