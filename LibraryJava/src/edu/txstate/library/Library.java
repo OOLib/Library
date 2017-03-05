@@ -349,7 +349,7 @@ public class Library {
 			break;
 			
 		case 2:
-			String[] jWords = new String[6];
+			String[] jWords = new String[7];
 			System.out.println("Enter the journal title: ");
 			jWords[0] = in.nextLine();
 			
